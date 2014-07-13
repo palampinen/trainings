@@ -1,3 +1,7 @@
 /* Empty. Add your own CSS if you like */
 
-html, body, h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6  {font-family:Roboto,Helvetica Neue, Helvetica, Arial;}
+html, body, h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6  {font-family:'Montserrat',Roboto,Helvetica Neue, Helvetica, Arial;}
+
+.item {background-color:#000;border-color:#111; color:#bbb;}
+.item-complex .item-content, .item-radio .item-content {background-color:#000;}
+.menu {background:#000 url(../img/loadman/new_dark.jpg) no-repeat 100% 100%; background-size:100% auto;} 
