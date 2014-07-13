@@ -1,7 +1,24 @@
 /* Empty. Add your own CSS if you like */
 
+
 html, body, h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6  {font-family:'Montserrat',Roboto,Helvetica Neue, Helvetica, Arial;}
 
+
+/* Sidenav */
+.item-complex .item-content, .item-radio .item-content {background-color:#000;color:#bbb;}
 .item {background-color:#000;border-color:#111; color:#bbb;}
-.item-complex .item-content, .item-radio .item-content {background-color:#000;}
-.menu {background:#000 url(../img/loadman/new_dark.jpg) no-repeat 100% 100%; background-size:100% auto;} 
+.menu {background:#000 url(../img/loadman/new_dark.jpg) no-repeat 100% 100%; background-size:110% auto;} 
+.menu .title {text-align:left;}
+.menu .item, .menu .item-complex  .item-content {border:none;background:transparent;}
+.menu .item:active, .menu .item:hover, .menu .item:focus, .menu .item.activated,
+.menu .item a:active, .menu .item a:hover, .menu .item a:focus,.menu .item a.activated {background:rgba(255,255,255,.04);}
+.menu .item a > .icon {color:#45CCBE;font-size:120%;margin-right:10px;width:20px;display:inline-block;}
+.menu .item .iconimg {width:20px;float:left;margin:2px 15px 0 0;}
+
+
+/* Background-images */
+.bg-run2 {background:url(../img/loadman/run2.jpg) no-repeat 25% 50%; background-size:auto 100%;}
+
+
+
+
