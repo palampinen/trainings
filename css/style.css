@@ -25,8 +25,6 @@ html, body, h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6  {font-family:'
 .bg-run2 {background:url(../img/loadman/run2.jpg) no-repeat 25% 50%; background-size:auto 100%;}
 
 
-
-
 /* GAUGE */
 .center {text-align:center;}
 .gaugeWrap  {position:relative;color:rgba(0,0,0,.5);font-size:11px;font-weight:500; margin:20px 0 40px;}
