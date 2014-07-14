@@ -1,4 +1,9 @@
-/* Empty. Add your own CSS if you like */
+/*
+* Colors:
+Lightgreen: #45CCBE
+Reddish: #CF5777
+Lazy Electric Blue: #5E8CD6
+*/
 
 
 html, body, h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6  {font-family:'Montserrat',Roboto,Helvetica Neue, Helvetica, Arial;}
@@ -30,7 +35,7 @@ margin: 0px auto;
 border-radius: 50%;
 -webkit-border-radius: 50%;
 padding: 30px;
-background:rgba(255,255,255,.25);
+background:transparent;
 width: 180px;
 height: 180px;
 }

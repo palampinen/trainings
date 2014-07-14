@@ -38,7 +38,6 @@ angular.module('starter.controllers', [])
   
 
 
-
   $scope.thisweek      = 3;
   $scope.weekAverage   = 3.9;
   $scope.total         = 500;
@@ -50,15 +49,15 @@ angular.module('starter.controllers', [])
 
    CanvasJS.addColorSet("mainChartColors",
                 [
-          //"#45CCBE",
-          "rgba(56,216,198,.7)",
-          "rgba(116,217,206,.04)"      
+          "#45CCBE",
+         // "rgba(56,216,198,.7)",
+          "rgba(255,255,255,.15)"      
                 ]);
   
   var chart = new CanvasJS.Chart("mainChart",
   {
       backgroundColor:'transparent',
-      animationEnabled: true,
+      animationEnabled: false,
       interactivityEnabled: false,
       theme: "theme1",
       colorSet: 'mainChartColors',
