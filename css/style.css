@@ -37,8 +37,9 @@ background:transparent;
 width: 180px;
 height: 180px;
 }
-.gaugeWrap .title { position:relative; color:#45CCBE;font-family:Montserrat,'RobotoLight';}
-.gaugeWrap.big .title {font-size:50px; line-height:50px; margin-top:5px; font-family:Montserrat,'RobotoLight';}
+
+.gaugeWrap .title { position:relative; color:#45CCBE;font-family:Roboto,Montserrat; font-weight:500;}
+.gaugeWrap.big .title {font-size:50px; line-height:50px; margin-top:5px; font-family:Roboto,Montserrat;font-weight:100;}
 .gauge-circle {margin:0 auto;border-radius:50%; padding:5px; width:75px; height:75px; position:relative;}
 .gaugeWrap.big .gauge-circle {width:120px; height:120px;padding:16px 20px 10px; background:#FFF;}
 .gauge-circle .title-top {position:relative;top:5px;font-size:14px; }
