@@ -33,6 +33,63 @@ angular.module('starter.controllers', [])
   };
 })
 
+
+.controller('DashCtrl', function (Trainings, $scope) {
+  
+
+
+
+  $scope.thisweek      = 3;
+  $scope.weekAverage   = 3.9;
+  $scope.total         = 500;
+  $scope.thisYearCount = 103;
+  $scope.past30Days    = 14;
+
+
+
+
+   CanvasJS.addColorSet("mainChartColors",
+                [
+          //"#45CCBE",
+          "rgba(56,216,198,.7)",
+          "rgba(116,217,206,.04)"      
+                ]);
+  
+  var chart = new CanvasJS.Chart("mainChart",
+  {
+      backgroundColor:'transparent',
+      animationEnabled: true,
+      interactivityEnabled: false,
+      theme: "theme1",
+      colorSet: 'mainChartColors',
+      toolTip: {
+        enabled:false
+      },
+      data: [
+      {     
+        type: "doughnut",
+        indexLabelFontFamily: "Raleway",       
+        indexLabelFontSize: 20,
+        startAngle:-90,
+        indexLabelLineColor: "#CCC", 
+      //  toolTipContent: "{y}",          
+
+        dataPoints: [
+        {  y: $scope.thisweek  },
+        {  y: 7-$scope.thisweek }
+        ]
+      }
+      ]
+  });
+
+  chart.render();
+
+
+})
+
+
+
+
 .controller('PlaylistsCtrl', function($scope) {
   $scope.playlists = [
     { title: 'Reggae', id: 1 },
