@@ -51,7 +51,7 @@ angular.module('starter.controllers', [])
                 [
           "#45CCBE",
          // "rgba(56,216,198,.7)",
-          "rgba(255,255,255,.15)"      
+          "rgba(0,0,0,.05)"      
                 ]);
   
   var chart = new CanvasJS.Chart("mainChart",

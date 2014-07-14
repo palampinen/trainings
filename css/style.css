@@ -12,34 +12,49 @@ html, body, h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6  {font-family:'
 /* Sidenav */
 .item-complex .item-content, .item-radio .item-content {background-color:#000;color:#bbb;}
 .item {background-color:#000;border-color:#111; color:#bbb;}
-.menu {background:#000 url(../img/loadman/new_dark.jpg) no-repeat 100% 100%; background-size:110% auto;} 
+.menu {background:#111;} 
+.menu {background:#111;} 
 .menu .title {text-align:left;}
 .menu .item, .menu .item-complex  .item-content {border:none;background:transparent;}
 .menu .item:active, .menu .item:hover, .menu .item:focus, .menu .item.activated,
 .menu .item a:active, .menu .item a:hover, .menu .item a:focus,.menu .item a.activated {background:rgba(255,255,255,.04);}
 .menu .item a > .icon {color:#45CCBE;font-size:120%;margin-right:10px; width:20px; display:inline-block; text-align:center; }
 .menu .item .iconimg {width:20px;float:left;margin:2px 15px 0 0;}
+.menu .bar-header {background:#111; border-color:#111;font-size:120%;}
 
 
-/* Background-images */
-.bg-run2 {background:url(../img/loadman/run2.jpg) no-repeat 25% 50%; background-size:auto 100%;}
+/* Background-images 
+.bg-run2 {background:url(../img/loadman/run2.jpg) no-repeat 25% 50%; background-size:auto 100%;}*/
 
 
 /* GAUGE */
 .center {text-align:center;}
 .gaugeWrap  {position:relative;color:rgba(0,0,0,.5);font-size:11px;font-weight:500; margin:20px 0 40px;}
-.gaugeWrap.big {font-size:15px;font-weight:300;font-family:'Raleway';
+.gaugeWrap.big {font-size:15px;font-weight:400; 
 margin: 0px auto;
 border-radius: 50%;
 -webkit-border-radius: 50%;
 padding: 30px;
-background:transparent;
+background-color:transparent;
 width: 180px;
 height: 180px;
 }
 
-.gaugeWrap .title { position:relative; color:#45CCBE;font-family:Roboto,Montserrat; font-weight:500;}
-.gaugeWrap.big .title {font-size:50px; line-height:50px; margin-top:5px; font-family:Roboto,Montserrat;font-weight:100;}
+.gaugeWrap .title { position:relative; color:#45CCBE;}
+.gaugeWrap.big .title {font-size:50px; line-height:50px; margin-top:5px; font-family:Roboto,Helvetica Neue, Helvetica, Arial;font-weight:300;}
 .gauge-circle {margin:0 auto;border-radius:50%; padding:5px; width:75px; height:75px; position:relative;}
 .gaugeWrap.big .gauge-circle {width:120px; height:120px;padding:16px 20px 10px; background:#FFF;}
-.gauge-circle .title-top {position:relative;top:5px;font-size:14px; }
+.gauge-circle .title-top {position:relative;top:5px;font-size:12px; font-family:Montserrat,Roboto,Helvetica Neue, Helvetica, Arial}
+
+
+/* CHART */
+.chartwrap {margin:0px auto 0;}
+#chart_div { font-family:'Raleway','RobotoLight','Roboto','Helvetica',Arial; position:relative; text-transform:uppercase;}
+.canvasjs-chart-tooltip > div {padding:8px !important;}
+.canvasjs-chart-tooltip,  .canvasjs-chart-tooltip > div{border:0 !important; font-family:'RobotoLight' !important; font-style:normal !important; text-shadow:none !important; border-radius:0 !important;}
+.canvasjs-chart-credit {display:none !important;}
+.bignumbrow {padding:0; background: #45CCBE;}
+.bignumbrow .col:first-child {border-right:1px solid rgba(255,255,255, 0.3)}
+.bignumbrow .col {text-align:center;}
+.bignum {color:#eee; margin:0; font-weight:normal; font-family:'RobotoLight'; font-size:50px;line-height:60px;}
+.help  {color
