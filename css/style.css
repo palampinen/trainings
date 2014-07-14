@@ -27,27 +27,37 @@ html, body, h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6  {font-family:'
 .bg-run2 {background:url(../img/loadman/run2.jpg) no-repeat 25% 50%; background-size:auto 100%;}*/
 
 
-/* GAUGE */
+/* Gauge */
 .center {text-align:center;}
 .gaugeWrap  {position:relative;color:rgba(0,0,0,.5);font-size:11px;font-weight:500; margin:20px 0 40px;}
 .gaugeWrap.big {font-size:15px;font-weight:400; 
 margin: 0px auto;
 border-radius: 50%;
 -webkit-border-radius: 50%;
-padding: 30px;
+padding: 15px;
 background-color:transparent;
-width: 180px;
-height: 180px;
+width: 140px;
+height: 140px;
 }
 
 .gaugeWrap .title { position:relative; color:#45CCBE;}
-.gaugeWrap.big .title {font-size:50px; line-height:50px; margin-top:5px; font-family:Roboto,Helvetica Neue, Helvetica, Arial;font-weight:300;}
+.gaugeWrap.big .title {font-size:40px; line-height:40px; margin-top:0px; font-family:Roboto,Helvetica Neue, Helvetica, Arial;font-weight:300;}
+.gaugeWrap.big .title img{height: 20px; float: left; margin: 10px 0 0 10px;}
 .gauge-circle {margin:0 auto;border-radius:50%; padding:5px; width:75px; height:75px; position:relative;}
-.gaugeWrap.big .gauge-circle {width:120px; height:120px;padding:16px 20px 10px; background:#FFF;}
-.gauge-circle .title-top {position:relative;top:5px;font-size:12px; font-family:Montserrat,Roboto,Helvetica Neue, Helvetica, Arial}
+.gaugeWrap.big .gauge-circle {width:90px; height:90px;padding:6px 5px 10px; background:#FFF;}
+.gauge-circle .title-top {position:relative;top:5px;font-size:9px; font-family:Montserrat,Roboto,Helvetica Neue, Helvetica, Arial}
 
 
-/* CHART */
+/* Weeklist */
+.week-list{margin:20px;width:auto;}
+.week-list .col {text-align:center;color:#45CCBE; background:#f4f4f4; margin-left:-1px;font-size:10px;line-height:12px;padding-top:30px;}
+
+.week-list .col > span {display:block; text-transform:uppercase; font-weight:900;}
+.week-list .col .icon{font-size:30px;}
+.week-list .col.active {background:#45CCBE; color:#FFF;padding-top:0;}
+
+
+/* Chart */
 .chartwrap {margin:0px auto 0;}
 #chart_div { font-family:'Raleway','RobotoLight','Roboto','Helvetica',Arial; position:relative; text-transform:uppercase;}
 .canvasjs-chart-tooltip > div {padding:8px !important;}

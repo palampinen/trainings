@@ -4,17 +4,47 @@
   </ion-nav-buttons>
   <ion-content class="has-header">
     
-	<div id="mainChart" style="height: 238px; width: 100%;">
-	</div>
-  	<div style="position:absolute;top:23px;width: 100%;z-index:999;">
-			<div class="center gaugeWrap big" >
-				<div class="gauge-circle">
-				<span class="title-top">Tällä viikolla</span>
-				<div class="title" ><img style="height: 25px; float: left; margin-top: 10px;" src="img/squaredot_green.png" />{{thisweek}}</div>
-				</div>
-			</div>
-	</div>
 
+<div class="row">
+  <div class="col col-50">	
+	<div style="position:relative;">
+		<div id="mainChart" style="height: 180px; width: 100%;">
+		</div>
+		<div style="position:absolute;top:23px;width: 100%;z-index:999;">
+				<div class="center gaugeWrap big" >
+					<div class="gauge-circle">
+					<span class="title-top">Tällä viikolla</span>
+					<div class="title" ><img  src="img/squaredot_green.png" />{{thisweek}}</div>
+					</div>
+				</div>
+		</div>
+	</div>
+  </div>
+  <div class="col col-50">	
+	<div style="position:relative;">
+		<div id="mainChart2" style="height: 180px; width: 100%;">
+		</div>
+		<div style="position:absolute;top:23px;width: 100%;z-index:999;">
+				<div class="center gaugeWrap big" >
+					<div class="gauge-circle">
+					<span class="title-top">Tässä kuussa</span>
+					<div class="title" style="color:#5E8CD6;" ><img src="img/squaredot_green.png" />9</div>
+					</div>
+				</div>
+		</div>
+	</div>
+  </div>
+</div>
+
+<div class="row week-list">
+	<div class="col"> <span>ma</span> 14</div>
+	<div class="col active"><i class="icon ion-ios7-checkmark-empty"></i> <span>su</span> 13</div>
+	<div class="col"> <span>la</span> 12</div>
+	<div class="col active"><i class="icon ion-ios7-checkmark-empty"></i><span>pe</span> 11</div>
+	<div class="col active"><i class="icon ion-ios7-checkmark-empty"></i><span>to</span> 10</div>
+	<div class="col"> <span>ke</span> 9</div>
+	<div class="col"> <span>ti</span> 8</div>
+</div>
 
   </ion-content>
 </ion-view>

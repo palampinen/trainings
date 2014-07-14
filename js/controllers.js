@@ -82,7 +82,41 @@ angular.module('starter.controllers', [])
   });
 
   chart.render();
+  
+  
+     CanvasJS.addColorSet("mainChartColors2",
+                [
+          "#5E8CD6",
+         // "rgba(56,216,198,.7)",
+          "rgba(0,0,0,.05)"      
+                ]);
+    var chart2 = new CanvasJS.Chart("mainChart2",
+  {
+      backgroundColor:'transparent',
+      animationEnabled: false,
+      interactivityEnabled: false,
+      theme: "theme1",
+      colorSet: 'mainChartColors2',
+      toolTip: {
+        enabled:false
+      },
+      data: [
+      {     
+        type: "doughnut",
+        indexLabelFontFamily: "Raleway",       
+        indexLabelFontSize: 20,
+        startAngle:-90,
+        indexLabelLineColor: "#CCC", 
+      //  toolTipContent: "{y}",          
 
+        dataPoints: [
+        {  y: 9  },
+        {  y: 21 }
+        ]
+      }
+      ]
+  });
+  chart2.render();
 
 })
 
