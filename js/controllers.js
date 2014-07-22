@@ -2,18 +2,25 @@ angular.module('treenit.controllers', [])
 
 .controller('AppCtrl', function($scope, $state, $ionicModal, $timeout, AppAuth, Trainings, User) {
   
+
+
+    $scope.currentuser = User.all();
+    console.log('test');
+
+
   var startApp = function() {
     
+
     // Set a flag that we finished the intro
     window.localStorage['didIntro'] = true;
     
     // Disable back
-    /*
+    
     $ionicViewService.nextViewOptions({
       disableAnimate: true,
       disableBack: true
     }); 
-    */
+    
     
     
     Trainings.all()
@@ -76,6 +83,8 @@ angular.module('treenit.controllers', [])
       $scope.closeLogin();
     }, 1000);
     */
+
+
 
   };
 })
@@ -165,19 +174,16 @@ angular.module('treenit.controllers', [])
 
 
   $scope.thisweek      = 3;
-  $scope.weekAverage   = 3.9;
-  $scope.total         = 500;
-  $scope.thisYearCount = 103;
-  $scope.past30Days    = 14;
+  $scope.thismonth      = 9;
 
 
 
 
    CanvasJS.addColorSet("mainChartColors",
                 [
-          "#45CCBE",
+          "rgba(0,0,0,.12)",
          // "rgba(56,216,198,.7)",
-          "rgba(0,0,0,.05)"      
+          "rgba(255,255,255,.15)"      
                 ]);
   
   var chart = new CanvasJS.Chart("mainChart",
@@ -193,7 +199,7 @@ angular.module('treenit.controllers', [])
       data: [
       {     
         type: "doughnut",
-        indexLabelFontFamily: "Raleway",       
+        indexLabelFontFamily: "Lato",       
         indexLabelFontSize: 20,
         startAngle:-90,
         indexLabelLineColor: "#CCC", 
@@ -222,22 +228,22 @@ angular.module('treenit.controllers', [])
       animationEnabled: false,
       interactivityEnabled: false,
       theme: "theme1",
-      colorSet: 'mainChartColors2',
+      colorSet: 'mainChartColors',
       toolTip: {
         enabled:false
       },
       data: [
       {     
         type: "doughnut",
-        indexLabelFontFamily: "Raleway",       
+        indexLabelFontFamily: "Lato",       
         indexLabelFontSize: 20,
         startAngle:-90,
         indexLabelLineColor: "#CCC", 
       //  toolTipContent: "{y}",          
 
         dataPoints: [
-        {  y: 9  },
-        {  y: 21 }
+        {  y: $scope.thismonth  },
+        {  y: 30-$scope.thismonth }
         ]
       }
       ]
@@ -359,10 +365,10 @@ console.log($scope.treenit)
 
   CanvasJS.addColorSet("treeniShades",
           [
-          "#666",
-          "#45CCBE",
-          "#333",
-          "#222"                
+          "rgba(255,255,255,.5)",
+          "#fff",
+          "#ccc",
+          "#bbb"                
           ]);
 
   var chart = new CanvasJS.Chart("chart_div",
@@ -372,44 +378,45 @@ console.log($scope.treenit)
       theme:"theme1",
       title:{
       //text: "",
-      fontFamily:"RobotoLight",
+      fontFamily:"Lato",
       fontweight: "100"
       },
       axisX :{
-      includeZero: false,
-      labelFontFamily: "RobotoLight",
-      labelFontColor:"#eee",
-      labelFontSize:10,
-      lineColor: "#222",
-      lineThickness: 1,
-      tickColor: "#000",
-      gridThickness: 1,
-      gridColor: '#222',
-      stripLines:[
-        {
-        thickness:1,
-        value: d.getMonth() + (d.getDate() / 32),
-        color:"#fff"
-        }
-      ]
+        includeZero: false,
+        labelFontFamily: "Lato",
+        labelFontColor:"#eee",
+        labelFontSize:10,
+        lineColor: "rgba(255,255,255,.3)",
+        lineThickness: 1,
+        tickColor: "transparent",
+        gridThickness: 0,
+        gridColor: 'rgba(255,255,255,.3)',
+        stripLines:[
+          {
+          thickness:1,
+          value: d.getMonth() + (d.getDate() / 32),
+          color:"rgba(255,255,255,.2)"
+          }
+        ]
       },
       axisY :{
-      includeZero: true,
-      labelFontFamily: "RobotoLight",
-      labelFontColor:"#eee",
-      lineColor: "#000",
-      tickColor: "#000",
-      gridThickness: 1,
-      gridColor: '#333',
-      maximum: 30
+        includeZero: true,
+        labelFontFamily: "Lato",
+        labelFontColor:"#fff",
+        lineColor: "transparent",
+        tickColor: "transparent",
+        gridThickness: 1,
+        gridColor: 'rgba(255,255,255,.3)',
+        maximum: 30
       
       },
       toolTip: {
       shared: "true"
       },
       legend:{
-      fontFamily:  "RobotoThin",
-      fontColor:"#eee",
+      fontFamily:  "Lato",
+      fontWeight:300,
+      fontColor:"#fff",
       fontSize:22,
       cursor:"pointer",
       itemclick : function(e) {

@@ -136,7 +136,7 @@ angular.module('treenit', ['ionic', 'treenit.controllers', 'treenit.services'])
     .state('app.pulse', {
       url: '/pulse',
       views: {
-        'tab-pulse': {
+        'menuContent': {
           templateUrl: 'templates/app-pulse.html',
           controller: 'PulseCtrl'
         }

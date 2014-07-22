@@ -14,9 +14,10 @@ html, body, h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6  {font-family:'
 /* Sidenav */
 /*.item-complex .item-content, .item-radio .item-content {background-color:#000;color:#bbb;}
 .item {background-color:#000;border-color:#111; color:#bbb;}*/
-.menu {background:#111;} 
-.menu {background:#111;} 
-.menu .title {text-align:left;}
+.menu {background:#000 url(../img/loadman/new_dark.jpg) no-repeat 100% 100%; background-size:100% auto;} 
+.menu .scroll{margin-top:10px;} 
+.menu .title {text-align:left; font-weight:300;text-transform:uppercase;}
+.menu .title span{display:inline-block;margin-right:15px;width:30px; height:30px; line-height:30px;text-align:center; border-radius:100%;background:rgba(255,255,255,.2);}
 .menu .item, .menu .item-complex  .item-content {border:none;background:transparent;color:#bbb;}
 .menu .item a {color:#bbb;}
 .menu .item:active, .menu .item:hover, .menu .item:focus, .menu .item.activated,
@@ -53,25 +54,46 @@ height: 140px;
 
 
 /* Weeklist */
-.week-list{margin:20px;width:auto;}
-.week-list .col {text-align:center;color:#45CCBE; background:#f4f4f4; margin-left:-1px;font-size:10px;line-height:12px;padding-top:30px;}
+#week-list-title{color:rgba(255,255,255,.8);font-weight:300; margin:60px 35px 0 0; padding:0; text-align:right;}
+.week-list{margin:0 20px 20px; width:auto;}
+.week-list .col {text-align:center;color:rgba(255,255,255,.8);border:1px solid rgba(255,255,255,.4); background:transparent; margin-left:-1px;font-size:10px;line-height:12px;padding-top:30px;}
 
 .week-list .col > span {display:block; text-transform:uppercase; font-weight:900;}
 .week-list .col .icon{font-size:30px;}
-.week-list .col.active {background:#45CCBE; color:#FFF;padding-top:0;}
+.week-list .col.active {background:#fff; color:#45CCBE;padding-top:0;}
 
 
 /* Chart */
 .chartwrap {margin:0px auto 0;}
-#chart_div { font-family:'Raleway','RobotoLight','Roboto','Helvetica',Arial; position:relative; text-transform:uppercase;}
-.canvasjs-chart-tooltip > div {padding:8px !important;}
-.canvasjs-chart-tooltip,  .canvasjs-chart-tooltip > div{border:0 !important; font-family:'RobotoLight' !important; font-style:normal !important; text-shadow:none !important; border-radius:0 !important;}
+#chart_div { font-family:'Lato','Roboto','Helvetica',Arial; position:relative; text-transform:uppercase;}
+.canvasjs-chart-tooltip > div {padding:8px !important; opacity:0.8;background:#4BBDC3 !important;}
+.canvasjs-chart-tooltip,  .canvasjs-chart-tooltip > div{box-shadow:none !important;color:#FFF !important; border:0 !important;  font-family:'Lato' !important; font-style:normal !important; text-shadow:none !important; border-radius:0 !important;}
+.canvasjs-chart-tooltip{border:1px solid rgba(255,255,255,.7) !important; padding-left:30px !important; padding-right:30px !important; border-radius:30px !important;background:#4BBDC3 !important;opacity:0.89;}
 .canvasjs-chart-credit {display:none !important;}
+
 .bignumbrow {padding:0; background: #45CCBE;}
 .bignumbrow .col:first-child {border-right:1px solid rgba(255,255,255, 0.3)}
 .bignumbrow .col {text-align:center;}
 .bignum {color:#eee; margin:0; font-weight:normal; font-family:'Lato'; font-size:50px;line-height:60px;}
-.help  {color:blue;}
+.help  {color:#FFF;}
+
+.numWrap {margin-top:-7px;}
+.numWrap.left {text-align:left;}
+.numWrap.right {text-align:right;}
+.numWrap h3 {text-transform:uppercase; font-weight:900;font-size:11px;white-space:nowrap;margin-bottom:0;color:rgba(255,255,255,.5)}
+.numWrap .num{color:#fff;font-size:24px;color:#ddd;font-weight:300;}
+.numWrap .numicon  {font-size:30px;color:#45CCBE;}
+.numWrap .numicon.down  {color:#CF5777;}
+.bordercol {border-right:1px solid rgba(255,255,255,.1);padding-bottom:0 !important;}
+
+@media (min-height: 390px) {
+	.bottom-info {position:absolute; bottom:0px;width:100%;}
+	.fullheight .scroll {min-height:100%;}
+	.numrow{position:absolute;bottom:0px;}
+
+
+}
+
 
 /* CALENDAR / HISTORY */
 #list_days .item {border-color:rgba(255,255,255,0.1);background:transparent;border-width:0 0 1px 0;margin:0;}
@@ -123,7 +145,7 @@ height: 140px;
 .treeni h2 img {height:20px;margin:0 5px 0 0;}
 .treeni {color:#EEE;}
 .treeni .num{font-family:Lato; font-size:25px; text-align:center;color:#EEE;}
-.treeni {margin:15px 0 ; padding:15px 0; border-bottom:1px solid #222;clear:both;}
+.treeni {margin:15px 0 ; padding:15px 0; border-bottom:1px solid rgba(255,255,255,.3);clear:both;}
 .treeni .datecircle {margin: 0px auto 20px; color: #45CCBE; background: #FFF; line-height:110px; display: block; border-radius: 50%; font-family: Lato; text-align: center; height: 110px; width: 110px; font-size: 18px;}
 
 
@@ -134,6 +156,9 @@ height: 140px;
 	background-position: 10px 50%;
 	font-size:125%;font-weight:300; text-transform:uppercase;
 	color:rgba(255,255,255,0.7);
-	background-color:transparent; border-color:rgba(0,0,0,.03);
+	background-color:transparent; border-color:rgba(0,0,0,.02);
 }
+
+/*.traintypes .item .toggle .track {border-color:rgba(255,255,255,.2);background:rgba(255,255,255,.5);}*/
+
 .traintypes .item.active {color:#fff;background-color:transparent;}

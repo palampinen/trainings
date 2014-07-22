@@ -9,25 +9,34 @@
 
   <ion-side-menu side="left">
     <header class="bar bar-header bar-calm ">
-      <h1 class="title">TREENIT</h1>
+      <h1 class="title"><span><i class="icon ion-ios7-person"></i></span> {{currentuser.name}}</h1>
     </header>
     <ion-content class="has-header">
       <ion-list>
+      <!--
         <ion-item nav-clear menu-close ng-click="login()">
-           <img src="img/squaredot_white.png" class="iconimg" /> Login
+           <img src="img/squaredot_white.png" class="iconimg" /> LoginModal
         </ion-item>
+      -->
         <ion-item nav-clear menu-close href="#/app/dash">
-           <i class="icon ion-ios7-pulse"></i> Search
+           <i class="icon ion-ios7-speedometer"></i> Dash
         </ion-item>
-        <ion-item nav-clear menu-close href="#/app/browse">
-           <i class="icon ion-ios7-star"></i> Browse
-        </ion-item>
+
         <ion-item nav-clear menu-close href="#/app/playlists">
-           <i class="icon ion-ios7-person"></i> Playlists
+           <i class="icon ion-ios7-calendar"></i> Historia
+        </ion-item>
+
+        <ion-item nav-clear menu-close href="#/app/pulse">
+           <i class="icon ion-ios7-pulse"></i> Kehitys
         </ion-item>
 
         <ion-item nav-clear menu-close href="#/app/intro">
            <i class="icon ion-ios7-cloud-upload-outline"></i> Intro
+        </ion-item>
+
+
+        <ion-item nav-clear menu-close href="#/app/browse">
+           <i class="icon ion-code"></i> Debug
         </ion-item>
       </ion-list>
     </ion-content>
