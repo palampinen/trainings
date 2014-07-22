@@ -44,7 +44,8 @@ Treenit.prototype.getTimeFromLastVisit = function(){
 *	Parameter target_date, format dd.mm.yyyy
 */
 Treenit.prototype.getTrainingsOfDay = function(target_date){
-	var trainings = _.filter(this.data,function(training) {
+	var trainings = _.filter(this.data,function(training,key) {
+		training.id=key; //add id
 		return date2Date(target_date).getTime() == date2Date(training.date).getTime();
 	});
 	
@@ -183,16 +184,33 @@ Treenit.prototype.getMonthCalendar = function(year,month){
 		return _.pick(num,'date');
 	});
 	
+
 	var y = _.map(x, function(num) { 
 		return _.values(num)
 	});
+
+
 	y = _.flatten(y);
 	
 	var days = _.map( y, function(a) {
 		return parseInt(a.split('.')[0]);
 	});
 	
-	
+
+	// Traintypes to get info from filled dates
+	var traintypes = _.map(monthA, function(num) {
+		return _.pick(num,'date','traintype');
+	});
+	// uniq by date
+	traintypes = _.uniq(traintypes, true, function(training) {return training.date;})
+	// make traintype values to array to make value search easier 
+	traintypes = _.map(traintypes, function(a) {
+		
+		if(a.traintype != undefined) 
+			a.traintype = _.values(a.traintype)
+		return a;
+	});
+
 
 	
 	var months = [
@@ -252,7 +270,10 @@ Treenit.prototype.getMonthCalendar = function(year,month){
 			text:day,
 			link: linkFlag,
 			date: day+'.'+(monthIndex+1)+'.'+year,
-			weekend: isWeekEnd(day,monthIndex,year)
+			weekend: isWeekEnd(day,monthIndex,year),
+			filled: isFilled(linkFlag, traintypes,total+1
+
+				)
 		})
 		
 		if(linkFlag)
@@ -273,7 +294,8 @@ Treenit.prototype.getMonthCalendar = function(year,month){
 			text:text,
 			link: linkFlag,
 			date: day+'.'+(monthIndex+1)+'.'+year,
-			weekend: isWeekEnd(day,monthIndex,year)
+			weekend: isWeekEnd(day,monthIndex,year),
+			filled: isFilled(linkFlag, traintypes,total+1)
 		});
 		if(linkFlag)
 			total++;
@@ -285,7 +307,7 @@ Treenit.prototype.getMonthCalendar = function(year,month){
   monthObj.total = total;
 // End: From full-calendar  
 	
-	console.log(monthObj);
+//	console.log(monthObj);
 	
 	return monthObj;
 }
@@ -760,6 +782,9 @@ console.log('Days '+testi);
 
 /* Date prototype */
 
+
+
+
 // Get week number
 Date.prototype.getWeek = function() {
     // Create a copy of this date object  
@@ -852,4 +877,23 @@ function durationOfTimes(time){
 	
 	
 	return [hh,mm];
+}
+
+var daysInMonth = function(month,year) {
+    return new Date(year, month, 0).getDate();
+}
+
+var isWeekEnd = function(d,m,y) {
+	var candidate = new Date(y, m, d).getDay();
+	return ( candidate == 0 || candidate == 6)
+}
+
+
+var isFilled = function(need,traintypes,total) {
+	if(need && traintypes[traintypes.length-total] && traintypes[traintypes.length-total].traintype){
+		return _.indexOf(traintypes[traintypes.length-total].traintype,true) >=0;
+	}
+
+	return false;
+
 }

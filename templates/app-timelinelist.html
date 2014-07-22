@@ -1,0 +1,22 @@
+<ion-view title="Lista">
+  
+
+  <ion-nav-buttons side="right">
+    <a class="button" href="#/app/timeline">Kalenteri</a>
+  </ion-nav-buttons>
+
+ <ion-content class="has-header bg bg-black" >
+   	<ion-list id="list_trainings">
+      <ion-item collection-repeat="day in days" collection-item-width="'100%'" collection-item-height="50" class="month">
+			<a ng-href="#/app/timeline/{{day.date}}"><span>{{day.date}}</span> {{day.hourtype}}</a>
+      </ion-item>
+	</span>
+
+    </ion-list>
+	
+
+
+  </ion-content>	
+	
+
+</ion-view>

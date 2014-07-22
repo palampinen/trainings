@@ -54,13 +54,16 @@ angular.module('treenit.services', [])
 
 	
 	var myUser = User.all();
+
 	return {
 		all: function() {
-				
+
+				console.log('user',myUser)
+				/*
 				$ionicLoading.show({
 				  template: '<i class="icon ion-ios7-reloading"></i> Haetaan treenit...'
 				});
-				
+				*/
 				
 				var deferred = $q.defer();
 				$http({
@@ -107,12 +110,12 @@ angular.module('treenit.services', [])
 						localStorage.setItem('treenit-data-timestamp', d.getTime());
 						
 						// Hide loader
-						$ionicLoading.hide();
+						//$ionicLoading.hide();
 						deferred.resolve(data)
 					})
 					.error(function(data, status) {
 						deferred.reject(data);
-						$ionicLoading.hide();
+						//$ionicLoading.hide();
 						//alert("Error");
 				});
 				return deferred.promise;
@@ -161,12 +164,8 @@ angular.module('treenit.services', [])
 
 //tmp
 
-		var treenitNameSpace = 'treenit-user-';
-
-	
-
-		
-		var userdata = {
+		var treenitNameSpace = 'treenit-user-'
+			userdata = {
 			name: 		localStorage.getItem(treenitNameSpace+'name'), 
 			sex: 		localStorage.getItem(treenitNameSpace+'sex'), 
 			email:		localStorage.getItem(treenitNameSpace+'email'),
@@ -183,10 +182,10 @@ angular.module('treenit.services', [])
 			return (localStorage.getItem(treenitNameSpace+'username') && localStorage.getItem(treenitNameSpace+'password'));
 		},
 		get: function (key) {
-			return user;
+			return userdata;
 		},
 		some: function() {
-			return user.name;
+			return userdata.name;
 		},
 		save: function(data) {
 			if(data.name) 		localStorage.setItem(treenitNameSpace+'name'	, data.name)
@@ -222,7 +221,7 @@ angular.module('treenit.services', [])
 	
 })
 
-.factory('appAuth', ['$http','$q','$ionicLoading', function ($http, $q, $ionicLoading) {
+.factory('AppAuth', ['$http','$q','$ionicLoading', function ($http, $q, $ionicLoading) {
 	
 
 	return {
@@ -286,7 +285,6 @@ angular.module('treenit.services', [])
 	else 
 		treenitJSON = {};
 		
-//	console.log(treenitJSON);
 	var treeni = new Treenit(User.all().name, treenitJSON);
 	return {
 		all: function() {
@@ -345,7 +343,29 @@ angular.module('treenit.services', [])
 		},
 		latestCountByDays: function(days) {
 			return treeni.getLatestCountByDays(days);
+		},
+		setData: function(id,field,val){
+
+
+			treenitJSON[id][field]=val; 
+			var newData = JSON.stringify(treenitJSON);
+			localStorage.setItem('treenit-data', newData)
+		},
+		setTrainTypeData: function(id,tid,val){
+
+			if(treenitJSON[id]['traintype'] == undefined)
+				treenitJSON[id]['traintype'] = {};
+
+			treenitJSON[id]['traintype'][tid]=val; 
+			var newData = JSON.stringify(treenitJSON);
+			localStorage.setItem('treenit-data', newData)
+		},
+		removeData: function(id,field){
+
+			var newData = JSON.stringify(treenitJSON[id][field] = '');
+			localStorage.setItem('treenit-data', newData)
 		}
+
 	
 	}
 }])

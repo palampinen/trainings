@@ -1,0 +1,49 @@
+<ion-view title="Historia">
+
+
+  <ion-nav-buttons side="right">
+    <button ng-click="" class="button button-icon icon ion-compose"></button>
+  </ion-nav-buttons>
+
+
+  <ion-content class="has-header bg bg-black" >
+
+	
+	<div class="treeni" ng-repeat="treeni in treenit">
+	
+		<div ng-show="$index==0" class="datecircle"> {{treeni.date}}</div>
+		
+		<h2><img src="img/squaredot_white.png" /> {{treeni.hourtype}}</h2>
+		
+		<div class="clearfix"></div>
+		
+		
+		<h3 class="num" ng-show="{{treeni.duration}}"><i class="ion-ios7-timer-outline"></i> {{treeni.duration[0]}}h {{treeni.duration[1]}}min</h3>
+		
+		<!--
+		<label class="item item-input" style="background:transparent;  border-width:0;">
+			<input style="background:transparent; border-width:0 0 1px;" type="text" placeholder="Tietoja treenistä">
+		</label>
+		-->
+		
+		<ul class="list traintypes">
+
+			<li ng-repeat="traintype in traintypes" ng-class="{active: treeni.traintype[traintype.id]}" class="item item-toggle" style="background-image:url(img/icons/{{traintype.icon}}.png)">
+				 {{traintype.name}}
+				 <label class="toggle"  ng-click="$active.$index=!$active.$index; updateTrainType(treeni.id,traintype.id,$active.$index)">
+				   <input type="checkbox" ng-model="treeni.traintype[traintype.id]" >
+				   <div class="track" >
+					 <div class="handle"></div>
+				   </div>
+				 </label>
+			</li>
+		</ul>
+		
+		
+		<div class="clearfix"></div>
+
+		<button class="button button-dark button-block" ng-click="updateTrainType(treeni.id)">Update</button>
+	</div>
+
+  </ion-content>
+</ion-view>

@@ -1,0 +1,58 @@
+<ion-view title="Kehitys">
+  <!--
+  <ion-nav-buttons side="right">
+    <button menu-toggle="right" class="button button-icon icon ion-more"></button>
+  </ion-nav-buttons>
+  -->
+
+
+  <ion-content class="has-header bg bg-black fullheight"  >
+       
+	
+	
+	
+	<div class="center chartwrap">
+		<div id="chart_div" style="height: 250px; width: 100%;  font-family:'RobotoLight'; text-align:center;font-size:30px;padding-bottom:20px;color:#eee;"></div>
+	</div>	
+
+	
+	<div class="row numrow bottom-info">
+		<div class="col col-50 bordercol">
+			<div class="left numWrap">
+
+				<h3 class="title">Keskiarvo viikossa</h3>
+				<span class="num" id="num1">{{weekAverage}}</span>
+					
+				<h3 class="title">30 päivän aikana</h3>
+				<span class="num" id="num2">{{past30Days}} </span> <!--<i class="numicon icon ion-ios7-arrow-thin-up"></i> <i class="numicon down icon ion-ios7-arrow-thin-down"></i> <i class="numicon icon ion-ios7-minus-empty"></i>-->
+			</div>
+		</div>
+		<div class="col col-50">
+			<div class="right numWrap">
+	
+				<h3 class="title">Tänä vuonna</h3>
+				<span class="num" id="num3">{{thisYearCount}}</span>
+					
+				<h3 class="title">Yhteensä</h3>
+				<span class="num" id="num4">{{total}}</span>
+			</div>
+		</div>
+
+	</div>
+	
+<!--	
+<div class="bottom-info">	
+	<h2 class="" style="margin:30px 0 0;font-family: RobotoLight; position: relative;  font-size: 15px; text-transform: uppercase; font-weight: 300; padding: 9px; text-align: center; color: rgb(153, 153, 153); border-top: medium none; background: none repeat scroll 0% 0% rgba(255, 255, 255, 0.1);">
+		<span style="margin-right: 15px; font-family: &quot;Roboto&quot;; color: rgb(69, 204, 190);">{{thisDay}}. {{thisMonthName}}</span> <img style="height: 18px;position:relative;bottom:-3px; margin-right:16px;"" src="img/treenit-transparent-100.png" /> Tilanne
+	</h2>
+	
+	
+	<div class="row bignumbrow">
+		<div class="col green"><h3 class="bignum">{{thisYearCount}}</h3><span class="help">Tänä vuonna</span></div>
+		<div class="col"><h3 class="bignum">{{lastYearCount}}</h3><span class="help">Viime vuonna</span></div> 
+	</div>
+</div>	
+-->
+
+  </ion-content>
+</ion-view>

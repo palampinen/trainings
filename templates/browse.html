@@ -3,6 +3,14 @@
     <button menu-toggle="left"class="button button-icon icon ion-navicon"></button>
   </ion-nav-buttons>
   <ion-content class="has-header">
-    <h1>Browse</h1>
+    <h1>Data</h1>
+
+    <button class="button button-dark button-block" ng-click="updateData()">Update</button>
+    <button class="button button-dark button-block" ng-click="removeData()">Remove</button>
+    <button class="button button-dark button-block" ng-click="clearData()">Clear</button>
+    {{treenidata}}
+
+    <hr>
+    {{userdata}}
   </ion-content>
 </ion-view>

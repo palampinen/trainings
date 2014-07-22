@@ -1,0 +1,57 @@
+<ion-view title="Asetukset" class=" bg bg-new">
+  
+  <!--
+  <ion-nav-buttons side="right">
+    <button menu-toggle="right" class="button button-icon icon ion-more"></button>
+  </ion-nav-buttons>-->
+
+
+  <ion-content class="has-header padding" >
+    
+	<form class="list fadeform" name="loginForm" >
+		<!-- Nimi -->
+		<label class="item item-input">
+			<span class="input-label">Nimi</span>
+			<input type="text" placeholder="Nimi" id="name" name="name" data-ng-model="user.name"   />
+		</label>
+		
+		<!-- Email -->
+		<label class="item item-input">
+			<span class="input-label">Email</span>
+			<input type="email" placeholder="Email" id="email" name="email" data-ng-model="user.email"   />
+		</label>
+		
+	
+				   <!-- Tunnus -->
+				   <label class="item item-input">
+					<span class="input-label">Käyttäjätunnus</span>
+					<input type="text" placeholder="Käyttäjätunnus" id="username" name="username" data-ng-model="user.username"  required />
+				   </label>
+				   
+				   <!-- Password -->
+				   <label class="item item-input">
+					<span class="input-label">Salasana</span>
+					<input type="password" placeholder="Salasana" id="password" name="password" data-ng-model="user.password" required  />
+				   </label>
+				   
+				   <!-- Choose center -->
+				   <label class="item item-input item-select">
+					<span class="input-label">Treenipaikkasi</span>
+					
+					<select id="center" name="center" data-ng-model="user.center" required>
+					  <option value="">Valitse</option>
+					  <option value="aplico">Aplico</option>
+					  <option value="forever">Forever</option>
+					  <option value="fressi">Fressi</option>
+					</select>
+					</label>
+	 
+				   <button type="submit" class="button button-block button-dark" id="startApp" ng-click="save()"  ng-disabled="myForm.$invalid" >
+						Tallenna 
+						<i class="icon ion-ios7-checkmark-outline" ng-show="!loginForm.password.$error.required && !loginForm.username.$error.required && !loginform.center.$error.required"></i> 
+						<i ng-show="loginForm.password.$error.required || loginForm.username.$error.required || loginform.center.$error.required" class="icon ion-ios7-close-outline"></i> 
+				  </button>
+				</form>
+
+  </ion-content>
+</ion-view>

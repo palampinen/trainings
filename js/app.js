@@ -1,12 +1,12 @@
 // Ionic Starter App
 
 // angular.module is a global place for creating, registering and retrieving Angular modules
-// 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
+// 'treenit' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
-// 'starter.controllers' is found in controllers.js
-angular.module('starter', ['ionic', 'starter.controllers', 'treenit.services'])
+// 'treenit.controllers' is found in controllers.js
+angular.module('treenit', ['ionic', 'treenit.controllers', 'treenit.services'])
 
-.run(function($ionicPlatform) {
+.run(function($ionicPlatform,  $ionicViewService, $state, Trainings, User) {
   $ionicPlatform.ready(function() {
     // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
     // for form inputs)
@@ -17,6 +17,28 @@ angular.module('starter', ['ionic', 'starter.controllers', 'treenit.services'])
       // org.apache.cordova.statusbar required
       StatusBar.styleDefault();
     }
+
+
+// Goto Login or Get data
+  if(!User.isAuthed()){
+
+    //disable back
+     $ionicViewService.nextViewOptions({
+      disableAnimate: true,
+      disableBack: true
+    }); 
+    $state.go('app.intro')
+  }else{
+  Trainings.all()
+    .then(function(data) {
+      //console.log(data);  
+    }, function(data) {
+      // call returned an error
+      alert('Yhteysongelma');
+    });
+  }
+
+
   });
 })
 
@@ -28,6 +50,16 @@ angular.module('starter', ['ionic', 'starter.controllers', 'treenit.services'])
       abstract: true,
       templateUrl: "templates/menu.html",
       controller: 'AppCtrl'
+    })
+
+    .state('app.intro', {
+      url: "/intro",
+      views: {
+        'menuContent': {
+          templateUrl: 'templates/intro_login.html',
+          controller: 'IntroCtrl'
+        }
+      }
     })
 
     .state('app.dash', {
@@ -44,7 +76,8 @@ angular.module('starter', ['ionic', 'starter.controllers', 'treenit.services'])
       url: "/browse",
       views: {
         'menuContent' :{
-          templateUrl: "templates/browse.html"
+          templateUrl: "templates/browse.html",
+          controller: 'BrowseCtrl'
         }
       }
     })
@@ -66,7 +99,73 @@ angular.module('starter', ['ionic', 'starter.controllers', 'treenit.services'])
           controller: 'PlaylistCtrl'
         }
       }
-    });
+    })
+
+.state('app.timeline', {
+      url: '/timeline',
+      views: {
+        'tab-timeline': {
+          templateUrl: 'templates/app-timeline.html',
+          controller: 'TimelineCtrl'
+        }
+      }
+    })
+  
+  .state('app.timeline-detail', {
+      url: '/timeline/:date',
+      views: {
+        'menuContent': {
+          templateUrl: 'templates/app-timeline-detail.html',
+          controller: 'TimelineDetailCtrl'
+        }
+      }
+    })
+  
+  .state('app.timelinelist', {
+      url: '/timelinelist',
+      views: {
+        'tab-timeline': {
+          templateUrl: 'templates/app-timelinelist.html',
+          controller: 'TimelineListCtrl'
+        }
+      }
+    })
+  
+  
+
+    .state('app.pulse', {
+      url: '/pulse',
+      views: {
+        'tab-pulse': {
+          templateUrl: 'templates/app-pulse.html',
+          controller: 'PulseCtrl'
+        }
+      }
+    })
+  /*
+    .state('app.friend-detail', {
+      url: '/friend/:friendId',
+      views: {
+        'menuContent': {
+          templateUrl: 'templates/friend-detail.html',
+          controller: 'FriendDetailCtrl'
+        }
+      }
+    })
+  */
+    .state('app.account', {
+      url: '/account',
+      views: {
+        'tab-account': {
+          templateUrl: 'templates/app-account.html',
+          controller: 'AccountCtrl'
+        }
+      }
+    })
+
+
+
+    
   // if none of the above states are matched, use this as the fallback
   $urlRouterProvider.otherwise('/app/playlists');
 });

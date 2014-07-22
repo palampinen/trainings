@@ -1,0 +1,47 @@
+<!-- 
+	Template for Intro
+-->
+	
+<ion-view title="Treenit">	
+	<ion-content class="padding"  style="background:#000 url(img/loadman/new.jpg) no-repeat 0% 0%; background-size:auto 110%; text-align:left;">
+	
+			
+		
+			<!--<h1 style="color:#fff; font-size:300%; font-weight:100;margin: 0px 0 100px 0px;">TREENIT</h1>-->
+			<div class="center">
+				<img src="img/treenit100.png" style="width:80px;margin:10px 0 0; " />
+				
+				<h1 style="color:#FFF;text-transform:uppercase;margin:10px 0 5px; font-size:300%;">Aloita <span style="font-weight:300">nyt</span></h1>
+			</div>
+				<form class="list fadeform" name="loginForm" >
+				<h4 style="color:#FFF;text-align:center;">Syötä tunnuksesi</h4>
+				   <!-- Tunnus -->
+				   <label class="item item-input">
+					<input type="text" placeholder="Käyttäjätunnus" id="username" name="username" data-ng-model="user.username"  required />
+				   </label>
+				   
+				   <!-- Password -->
+				   <label class="item item-input">
+					<input type="password" placeholder="Salasana" id="password" name="password" data-ng-model="user.password" required  />
+				   </label>
+				   
+				   <!-- Choose center -->
+				   <label class="item item-input item-select">
+					<span class="input-label">Treenipaikkasi</span>
+					
+					<select id="center" name="center" data-ng-model="user.center" required>
+					  <option value="">Valitse</option>
+					  <option value="aplico">Aplico</option>
+					  <option value="forever">Forever</option>
+					  <option value="fressi">Fressi</option>
+					</select>
+					</label>
+	 
+				   <button type="submit" class="button button-block button-dark" id="startApp" ng-click="tryAuth()"  ng-disabled="myForm.$invalid" >
+						Kirjaudu 
+						<i class="icon ion-ios7-checkmark-outline" ng-show="!loginForm.password.$error.required && !loginForm.username.$error.required && !loginform.center.$error.required"></i> 
+						<i ng-show="loginForm.password.$error.required || loginForm.username.$error.required || loginform.center.$error.required" class="icon ion-ios7-close-outline"></i> 
+				  </button>
+				</form>
+	</ion-content>
+</ion-view>
