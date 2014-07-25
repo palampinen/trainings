@@ -1,0 +1,64 @@
+@font-face {
+	font-family: "Flaticon";
+	src: url("flaticon.eot");
+	src: url("flaticon.eot#iefix") format("embedded-opentype"),
+	url("flaticon.woff") format("woff"),
+	url("flaticon.ttf") format("truetype"),
+	url("flaticon.svg") format("svg");
+	font-weight: normal;
+	font-style: normal;
+}
+[class^="flaticon-"]:before, [class*=" flaticon-"]:before,
+[class^="flaticon-"]:after, [class*=" flaticon-"]:after {   
+	font-family: Flaticon;
+    /* font-size: 20px;
+	margin-left: 20px;*/
+	font-style: normal;
+}.flaticon-abdominals:before {
+	content: "\e000";
+}
+.flaticon-back:before {
+	content: "\e001";
+}
+.flaticon-bicep:before {
+	content: "\e002";
+}
+.flaticon-biceps:before {
+	content: "\e003";
+}
+.flaticon-gymnast28:before {
+	content: "\e004";
+}
+.flaticon-gymnast41:before {
+	content: "\e005";
+}
+.flaticon-human64:before {
+	content: "\e006";
+}
+.flaticon-leg5:before {
+	content: "\e007";
+}
+.flaticon-male118:before {
+	content: "\e008";
+}
+.flaticon-man159:before {
+	content: "\e009";
+}
+.flaticon-man329:before {
+	content: "\e00a";
+}
+.flaticon-shirtfront:before {
+	content: "\e00b";
+}
+.flaticon-shoulder:before {
+	content: "\e00c";
+}
+.flaticon-standing13:before {
+	content: "\e00d";
+}
+.flaticon-standing55:before {
+	content: "\e00e";
+}
+.flaticon-torso1:before {
+	content: "\e00f";
+}

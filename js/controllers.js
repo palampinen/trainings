@@ -324,14 +324,14 @@ console.log($scope.treenit)
   }
   
   var traintypes = [
-    { id: 0, name: 'Aerobinen', icon:'aero' },
-    { id: 1, name: 'Jalat', icon:'leg' },
+    { id: 0, name: 'Aerobinen', icon:'man329' },
+    { id: 1, name: 'Jalat', icon:'leg5' },
     { id: 2, name: 'Selkä', icon:'back' },
-    { id: 3, name: 'Rinta', icon:'chest' },
-    { id: 4, name: 'Kädet', icon:'hand' },
+    { id: 3, name: 'Rinta', icon:'shirtfront' },
+    { id: 4, name: 'Kädet', icon:'bicep' },
     //{ id: 5, name: 'Hauis', icon:'hand' },
     //{ id: 6, name: 'Ojentaja', icon:'hand' },
-    { id: 5, name: 'Vatsa', icon:'ab' },
+    { id: 5, name: 'Vatsa', icon:'abdominals' },
     
   ];
   
@@ -344,17 +344,18 @@ console.log($scope.treenit)
   var days = Treenidata.all();
   $scope.days = days;
   
-   var traintypes = [
-    { id: 0, name: 'Aerobinen', icon:'aero' },
-    { id: 1, name: 'Jalat', icon:'leg' },
+  var traintypes = [
+    { id: 0, name: 'Aerobinen', icon:'man329' },
+    { id: 1, name: 'Jalat', icon:'leg5' },
     { id: 2, name: 'Selkä', icon:'back' },
-    { id: 3, name: 'Rinta', icon:'chest' },
-    { id: 4, name: 'Kädet', icon:'hand' },
+    { id: 3, name: 'Rinta', icon:'shirtfront' },
+    { id: 4, name: 'Kädet', icon:'bicep' },
     //{ id: 5, name: 'Hauis', icon:'hand' },
     //{ id: 6, name: 'Ojentaja', icon:'hand' },
-    { id: 5, name: 'Vatsa', icon:'ab' },
+    { id: 5, name: 'Vatsa', icon:'abdominals' },
     
   ];
+  
 $scope.traintypes = traintypes;
   /*
   $scope.getItemHeight = function(item,index){

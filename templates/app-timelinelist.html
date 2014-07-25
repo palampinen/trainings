@@ -8,13 +8,18 @@
  <ion-content class="has-header bg bg-black" >
    	<ion-list id="list_trainings">
       <ion-item collection-repeat="day in days" collection-item-width="'100%'" collection-item-height="100" class="month">
-			 <a ng-href="#/app/timeline/{{day.date}}"><span>{{day.date}}</span> {{day.hourtype}}
+			 <a ng-href="#/app/timeline/{{day.date}}"><span>{{day.date}}</span>
+
+<span class="trainicons">
+          <span class="trainicon" ng-repeat="traintype in traintypes" ng-if="day.traintype[traintype.id]" >
+            <i class="treenicon flaticon-{{traintype.icon}}"></i>
+          </span>
+ </span>
+        {{day.hourtype}}
         
-        <ul class="trainicons">
-          <li class="trainicon" ng-repeat="traintype in traintypes" ng-if="day.traintype[traintype.id]" style="background-image:url(img/icons/{{traintype.icon}}.png)">
-           <!--{{traintype.name}}-->
-          </li>
-        </ul>
+
+        
+
        </a>
       </ion-item>
 	</span>
