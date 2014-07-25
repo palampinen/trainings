@@ -124,7 +124,7 @@ angular.module('treenit', ['ionic', 'treenit.controllers', 'treenit.services'])
   .state('app.timelinelist', {
       url: '/timelinelist',
       views: {
-        'tab-timeline': {
+        'menuContent': {
           templateUrl: 'templates/app-timelinelist.html',
           controller: 'TimelineListCtrl'
         }

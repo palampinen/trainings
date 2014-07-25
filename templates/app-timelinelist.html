@@ -1,14 +1,21 @@
 <ion-view title="Lista">
   
 
-  <ion-nav-buttons side="right">
-    <a class="button" href="#/app/timeline">Kalenteri</a>
+  <ion-nav-buttons side="left">
+      <button menu-toggle="left" class="button button-icon icon ion-navicon"></button>
   </ion-nav-buttons>
 
  <ion-content class="has-header bg bg-black" >
    	<ion-list id="list_trainings">
-      <ion-item collection-repeat="day in days" collection-item-width="'100%'" collection-item-height="50" class="month">
-			<a ng-href="#/app/timeline/{{day.date}}"><span>{{day.date}}</span> {{day.hourtype}}</a>
+      <ion-item collection-repeat="day in days" collection-item-width="'100%'" collection-item-height="100" class="month">
+			 <a ng-href="#/app/timeline/{{day.date}}"><span>{{day.date}}</span> {{day.hourtype}}
+        
+        <ul class="trainicons">
+          <li class="trainicon" ng-repeat="traintype in traintypes" ng-if="day.traintype[traintype.id]" style="background-image:url(img/icons/{{traintype.icon}}.png)">
+           <!--{{traintype.name}}-->
+          </li>
+        </ul>
+       </a>
       </ion-item>
 	</span>
 

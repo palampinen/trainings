@@ -181,9 +181,9 @@ angular.module('treenit.controllers', [])
 
    CanvasJS.addColorSet("mainChartColors",
                 [
-          "rgba(0,0,0,.12)",
+          "rgba(255,255,255,1)",
          // "rgba(56,216,198,.7)",
-          "rgba(255,255,255,.15)"      
+          "rgba(255,255,255,0.2)"      
                 ]);
   
   var chart = new CanvasJS.Chart("mainChart",
@@ -344,8 +344,18 @@ console.log($scope.treenit)
   var days = Treenidata.all();
   $scope.days = days;
   
-  console.log(days);
-
+   var traintypes = [
+    { id: 0, name: 'Aerobinen', icon:'aero' },
+    { id: 1, name: 'Jalat', icon:'leg' },
+    { id: 2, name: 'Selkä', icon:'back' },
+    { id: 3, name: 'Rinta', icon:'chest' },
+    { id: 4, name: 'Kädet', icon:'hand' },
+    //{ id: 5, name: 'Hauis', icon:'hand' },
+    //{ id: 6, name: 'Ojentaja', icon:'hand' },
+    { id: 5, name: 'Vatsa', icon:'ab' },
+    
+  ];
+$scope.traintypes = traintypes;
   /*
   $scope.getItemHeight = function(item,index){
     return item.weeks.length * 62 + 100;
