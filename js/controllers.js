@@ -257,8 +257,9 @@ angular.module('treenit.controllers', [])
  
   var months = Treenidata.monthCalendarFromBeginning();
   $scope.months = months;
+
   
-  //console.log( $scope.months)
+  console.log( $scope.months)
 
   $scope.getItemHeight = function(item,index){
     return item.weeks.length * 62 + 100;
@@ -474,12 +475,12 @@ $scope.traintypes = traintypes;
   
   
   
-  
-  $scope.thisMonthName  = months[d.getMonth()];
-  $scope.thisDay      = d.getDate();
+/*  
+   $scope.thisMonthName  = months[d.getMonth()];
+   $scope.thisDay      = d.getDate();
   $scope.thisYearCount  = Treenidata.thisYearCount();
-  $scope.lastYearCount  = Treenidata.yearCountToDate( d.getFullYear()-1, new Date(d.getFullYear()-1, d.getMonth(),d.getDate()));
-
+   $scope.lastYearCount  = Treenidata.yearCountToDate( d.getFullYear()-1, new Date(d.getFullYear()-1, d.getMonth(),d.getDate()));
+*/
   
   
   $scope.weekAverage   = 0;
@@ -488,9 +489,9 @@ $scope.traintypes = traintypes;
   $scope.past30Days    = 0;
   
   $scope.weekAverage    = Treenidata.weeklyAverage();
-  $scope.total      = Treenidata.count();
+ // $scope.total      = Treenidata.count();
   $scope.thisYearCount  = Treenidata.thisYearCount();
-  $scope.past30Days     = Treenidata.latestCountByDays(30);
+ // $scope.past30Days     = Treenidata.latestCountByDays(30);
   
   
 })

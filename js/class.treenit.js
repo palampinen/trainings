@@ -100,7 +100,7 @@ Treenit.prototype.getWeeklyAverage = function(){
 	
 	if(!this.data.length) return 0;
 	
-	var firstVisit = this.data[ this.data.length-1 ].date,
+	var firstVisit = this.getFirstVisit(),
 		diff = days_between( new Date(), date2Date(firstVisit));
 	
 	if(diff == 0)
@@ -184,6 +184,7 @@ Treenit.prototype.getMonthCount = function(year,month){
 	Parameters year, month
 */
 Treenit.prototype.getMonthCalendar = function(year,month){
+	
 	var monthA =  _.filter(this.data,function(training) {
 		return year == date2Date(training.date).getFullYear() && month == date2Date(training.date).getMonth();
 	});
@@ -330,11 +331,12 @@ Treenit.prototype.getMonthCalendarFromBeginning = function() {
 		cMonth = d.getMonth(),
 		cal = [];
 
+
 	// Current Year
 	for(var j=cMonth; (fYear ==cYear && j>=fMonth) || (fYear != cYear && j>=0) ; j--)
 		cal.push(this.getMonthCalendar(cYear,j));
 		
-		// Years in the middle
+	// Years in the middle
 	if(cYear-fYear >= 2)
 		for(var i=cYear-1; i>=fYear+1; i--)
 			for(var j=11; j>=0; j--)
@@ -715,11 +717,19 @@ Treenit.prototype.getLatestCountByDays = function( days) {
 
 //	first visit month and year
 Treenit.prototype.getFirstVisitMonthYear = function() {
-	var firstVisit = this.data[ this.data.length-1 ].date,
+	
+	var firstVisit = this.getFirstVisit(),
 		firstVisitDate = date2Date(firstVisit);
 	return [firstVisitDate.getFullYear(),firstVisitDate.getMonth()];
 }
 
+
+//	first visit date
+Treenit.prototype.getFirstVisit = function() {
+	var thisdata = _.sortBy(this.data, function(training){ return date2Date(training.date) }).reverse();
+	return thisdata[ thisdata.length-1 ].date;
+
+}
 
 
 /* TEST BY JQUERY 

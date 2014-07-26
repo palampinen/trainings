@@ -54,11 +54,11 @@ background-color:transparent;
 .gaugeWrap.big .title img{height: 20px; float: left; margin: 10px 0 0 10px;}
 .gauge-circle {margin:0 auto;border-radius:50%; position:relative;}
 
-
-.bigchart {margin:30px auto 10px; display:block;}
+.dashwrap {padding:30px 0 10px;position:relative;}
+.bigchart {margin:0px auto 0px; display:block;}
 .gaugeWrap.big .gauge-circle {
     height: 246px;
-    padding: 6px 5px 10px;
+    padding: 30px 5px 10px;
     background: transparent;
     width: 246px;
 }
@@ -148,7 +148,7 @@ background-color:transparent;
 #list_days span > a {
     background: none repeat scroll 0 0 transparent;
     border-radius: 100%;
-    color: rgba(255,255,255,.5);
+    color: rgba(255,255,255,.7);
     display: block;
 	margin:0 auto;
     font-size: 14px;
@@ -163,9 +163,9 @@ background-color:transparent;
 	border:1px solid transparent;
 
 }
-#list_days span > a.weekend {color:rgba(0,0,0,.3);}
-#list_days span > a.has_events {color:rgba(255,255,255,.7);font-weight:600;border-color:rgba(255,255,255,.4); }
-#list_days span > a.filled {border-color:#FFF; color:#FFF;}
+#list_days span > a.weekend {color: rgba(0,0,0,.2);}
+#list_days span > a.has_events {color:rgba(255,255,255,.9);font-weight:600;border-color:rgba(255,255,255,.9); }
+#list_days span > a.filled {background-color:#FFF; color:#4BBDC3;}
 
 #list_days .month {background:transparent;display:inline-block;width:100%;padding-top:20px;}
 #list_days .month h2 {color:rgba(255,255,255,.5); font-weight:300; text-align:right; line-height:30px;  margin:0px 0 0 ; padding:0 20px 0 0;font-size:18px; text-transform:uppercase;font-family: Lato;}
@@ -206,13 +206,13 @@ background-color:transparent;
 	background-color:transparent; border-color:rgba(0,0,0,.02);
 	line-height:34px;
 }
-.traintypes .item .treenicon {float:left; background:rgba(255,255,255,.85);color:#45CCBE; font-size:25px; border-radius:50%;display:inline-block; width:34px; height:34px; line-height:34px; text-align:center;  margin-right:20px;}
+.traintypes .item .treenicon {float:left; background:rgba(255,255,255,.85);color:#45CCBE;color:#aaa; font-size:25px; border-radius:50%;display:inline-block; width:34px; height:34px; line-height:34px; text-align:center;  margin-right:20px;}
 .traintypes .item .treenicon.flaticon-abdominals, .traintypes .item .treenicon.flaticon-gymnast41 {font-size:32px;}
 
 .traintypes .item .toggle .track {border-color:rgba(255,255,255,.03);background:rgba(255,255,255,.3);}
 .traintypes .toggle input:checked + .track {border-color:rgba(0,0,0,.03);background:rgba(0,0,0,.3);}
 
-.traintypes .item.active .treenicon {background:#FFF;}
+.traintypes .item.active .treenicon {background:#FFF; color:#45CCBE;}
 
 .traintypes .item.active {color:#fff;background-color:transparent;}
 .traintypes .item-toggle .toggle {top:15.5px;}
@@ -224,4 +224,4 @@ background-color:transparent;
 .addtreeni {margin:20px auto; display:block;}
 .center {text-align:center;}
 .buttonset {margin-bottom:30px;}
-.trash {color:rgba(0,0,0,.3); float:right;margin:0 25px 0 0;}
+.trash {color:rgba(0,0,0,.3); float:right;margin:0 0px 0 0;padding:2px 30px;}
