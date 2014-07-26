@@ -1,19 +1,21 @@
-<ion-view title="Historia" class="bg bg-black">
+<ion-view title="Päivä" class="bg bg-black">
 
 
   <ion-nav-buttons side="right">
-    <button ng-click="" class="button button-icon icon ion-compose"></button>
+   <!-- <button ng-click="" class="button button-icon icon ion-compose"></button>-->
   </ion-nav-buttons>
 
 
   <ion-content class="has-header" >
 
-	
+		
+    <div class="datecircle"> {{date}}</div>
+
 	<div class="treeni" ng-repeat="treeni in treenit">
 	
-		<div ng-show="$index==0" class="datecircle"> {{treeni.date}}</div>
 		
-		<h2><img src="img/squaredot_white.png" /> {{treeni.hourtype}}</h2>
+		
+		<h2><img src="img/squaredot_white.png" /> {{treeni.hourtype}} <a ng-show="treeni.manual" href ng-click="removeTraining(treeni.id)"><i class="icon ion-ios7-trash trash"></i></a></h2>
 		
 		<div class="clearfix"></div>
 		
@@ -43,6 +45,14 @@
 		
 		<div class="clearfix"></div>
 
+	</div>
+	<div ng-show="!future">
+		<button ng-click="showBtns=!showBtns" class="button button-large button-outline button-light icon-left ion-ios7-plus-empty treenibtn addtreeni">Lisää treeni</button>
+
+		<div ng-show="showBtns" class="center buttonset">
+			<button ng-click="addTraining('kuntosali')" class="button button-outline button-light treenibtn">Kuntosali</button>
+			<button ng-click="addTraining('muu treeni')" class="button button-outline button-light treenibtn">Muu treeni</button>
+		</div>
 	</div>
 
   </ion-content>

@@ -15,7 +15,7 @@ function Treenit(name, data){
 
 // All trainings
 Treenit.prototype.all = function(){
-    return this.data;
+    return 	_.sortBy(this.data, function(training){ return date2Date(training.date) }).reverse();
 }
 
 
@@ -51,7 +51,7 @@ Treenit.prototype.getTrainingsOfDay = function(target_date){
 	
 	return _.map(trainings, function(val, key, list) {
 		
-		if( val.hourtype.toLowerCase().indexOf('kuntosali') < 0){
+		if( val.hourtype.toLowerCase().indexOf('kuntosali') < 0 && val.time){
 			var newObj = _.clone(val);
 			newObj.duration = durationOfTimes(val.time)
 			return newObj;
@@ -66,17 +66,18 @@ Treenit.prototype.getTrainingsOfDay = function(target_date){
 *	Count of this weeks trainings
 */
 Treenit.prototype.getThisWeekActivity = function() {
-	   
 
 	var weekCount = 0,
 		d = new Date(),
 		treenidate,
-		weekNumber = d.getWeek();
-	
-	for(var i = 0; i < this.data.length;i++){
+		weekNumber = d.getWeek(),
+		thisdata = _.sortBy(this.data, function(training){ return date2Date(training.date) }).reverse();
 
-		treenidate = date2Date(this.data[i].date);
+	for(var i = 0; i < thisdata.length;i++){
+
+		treenidate = date2Date(thisdata[i].date);
 		
+
 		// week and month of training
 		var w = treenidate.getWeek();
 		var y = treenidate.getFullYear();
@@ -863,6 +864,7 @@ function days_between(date1, date2) {
 *	10:00-11:30 -> 1:30
 */
 function durationOfTimes(time){
+
 	var timeParts = time.split("-"),	
 		startTime = timeParts[0].split(':'),
 		endTime   =  timeParts[1].split(':');

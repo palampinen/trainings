@@ -364,7 +364,28 @@ angular.module('treenit.services', [])
 
 			var newData = JSON.stringify(treenitJSON[id][field] = '');
 			localStorage.setItem('treenit-data', newData)
+		},
+		addTraining: function(date,name){
+			//disable adding future trainings
+			if(date2Date(date) > new Date())
+				return false;
+
+			treenitJSON.push({
+				date:date,
+				hourtype:name,
+				time: '00:00-00:00',
+				manual: 1
+			})
+
+			var newData = JSON.stringify(treenitJSON);
+			localStorage.setItem('treenit-data', newData);
+		},
+		removeTraining: function(id){
+			treenitJSON.splice(id,1)
+			var newData = JSON.stringify(treenitJSON);
+			localStorage.setItem('treenit-data', newData);
 		}
+		
 
 	
 	}

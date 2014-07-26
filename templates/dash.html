@@ -6,7 +6,7 @@
     
 
 <div style="position:relative" ng-click="flag=!flag;updateChart(flag)">
-		<canvas id="dashChartWeek" class="bigchart" width="270" height="270"></canvas>
+		<canvas id="dashChartWeek" class="bigchart" width="250" height="250"></canvas>
 		<div style="position:absolute;top:17px;left:0; width: 100%;z-index:999;">
 				<div class="center gaugeWrap big" >
 					<div class="gauge-circle">
@@ -24,11 +24,11 @@
 <div class="bottom-info">
 	<h3 id="week-list-title">5 päivää</h3>
 	<div class="row week-list">
-		<div class="col"> <span>la</span> 26</div>
-		<div class="col active"><i class="icon ion-ios7-checkmark-empty"></i> <span>pe</span> 25</div>
-		<div class="col active"><i class="icon ion-ios7-checkmark-empty"></i><span>to</span> 24</div>
-		<div class="col"> <span>ke</span> 23</div>
-		<div class="col"> <span>ti</span> 22</div>
+		<a class="col" href="#/app/timeline/26.7.2014"> <span>la</span> 26</a>
+		<a class="col" href="#/app/timeline/25.7.2014"> <span>pe</span> 25</a>
+		<a class="col" href="#/app/timeline/24.7.2014"> <span>to</span> 24</a>
+		<a class="col active" href="#/app/timeline/23.7.2014"><i class="icon ion-ios7-checkmark-empty"></i> <span>ke</span> 23</a>
+		<a class="col active" href="#/app/timeline/22.7.2014"><i class="icon ion-ios7-checkmark-empty"></i><span>ti</span> 22</a>
 	</div>
 </div>
 

@@ -6,8 +6,7 @@ Lazy Electric Blue: #5E8CD6
 */
 
 
-html, body, h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6  {font-family:'Lato','Montserrat',Roboto,Helvetica Neue, Helvetica, Arial;}
-
+html, body, h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6, button, input,select,option,textarea  {font-family:'Lato','Montserrat',Roboto,Helvetica Neue, Helvetica, Arial;}
 
 
 
@@ -35,7 +34,7 @@ html, body, h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6  {font-family:'
 
 .bar-light .button.button-clear, .bar-light,.bar-light .button {color:#45CCBE;}
 .bar.bar-light .title {color:#45CCBE; font-weight:300; font-size:22px; text-transform:uppercase;}
-.bar.bar-light.bar-header {border:0 !important; box-shadow:none !important;}
+.bar.bar-light.bar-header {border:0 !important; box-shadow:none !important; -webkit-box-shadow:none !important;}
 
 /* Gauge */
 .center {text-align:center;}
@@ -56,7 +55,7 @@ background-color:transparent;
 .gauge-circle {margin:0 auto;border-radius:50%; position:relative;}
 
 
-.bigchart {margin:20px auto; display:block;}
+.bigchart {margin:30px auto 10px; display:block;}
 .gaugeWrap.big .gauge-circle {
     height: 246px;
     padding: 6px 5px 10px;
@@ -93,12 +92,13 @@ background-color:transparent;
 
 /* Weeklist */
 #week-list-title{color:rgba(255,255,255,.8);font-weight:300; margin:0px 10px 0 0; padding:0; text-align:right;}
-.week-list{margin:0 -6px 10px; width:auto;}
-.week-list .col {text-align:center;color:rgba(255,255,255,.8);padding-bottom:10px;border:1px solid rgba(255,255,255,.4); background:transparent; margin-left:-1px;font-size:10px;line-height:12px;padding-top:30px;}
+.week-list{margin:0 -6px 0px; padding-bottom:0; width:auto;}
+.week-list .col {text-align:center;color:rgba(255,255,255,.8); text-decoration:none;padding-bottom:10px;border-style: solid; border-color:rgba(255,255,255,.2); border-width:1px 1px 1px 0; background:transparent; font-size:10px;line-height:12px;padding-top:30px;}
 
 .week-list .col > span {display:block; text-transform:uppercase; font-weight:900;}
 .week-list .col .icon{font-size:30px;}
 .week-list .col.active {background:#fff; color:#45CCBE;padding-top:0;}
+
 
 
 
@@ -189,12 +189,11 @@ background-color:transparent;
 
 /* Detail Date Page */
 .datepage .nav-bar.bar .title {font-family:Lato;}
-.treeni h2 {color:#fff;font-size:23px; margin:0 auto 10px; font-family:Lato; text-align:center;}
+.treeni h2 {color:#fff;font-size:23px; margin:0 auto 10px; font-weight:100; font-family:Lato; text-align:center; text-transform:uppercase;}
 .treeni h2 img {height:20px;margin:0 5px 0 0;}
-.treeni {color:#EEE;}
-.treeni .num{font-family:Lato; font-si texze:25px;t-align:center;color:#EEE;}
-.treeni {margin:15px 0 ; padding:15px 0; border-bottom:1px solid rgba(255,255,255,.3);clear:both;}
-.treeni .datecircle {margin: 0px auto 20px; color: #45CCBE; background: #FFF; line-height:110px; display: block; border-radius: 50%; font-family: Lato; text-align: center; height: 110px; width: 110px; font-size: 18px;}
+.treeni .num{font-family:Lato; font-size:25px;text-align:center;color:#EEE;}
+.treeni {color:#EEE; margin:15px 0 ; padding:15px 0; border-bottom:1px solid rgba(255,255,255,.2);clear:both;}
+.datecircle {margin: 20px auto 10px; color: #45CCBE; background: #FFF; line-height:110px; display: block; border-radius: 50%; font-family: Lato; text-align: center; height: 110px; width: 110px; font-size: 18px;}
 
 
 .traintypes .item {
@@ -217,3 +216,12 @@ background-color:transparent;
 
 .traintypes .item.active {color:#fff;background-color:transparent;}
 .traintypes .item-toggle .toggle {top:15.5px;}
+
+
+.button.button-light.button-outline {color:#FFF; border-color:#FFF;}
+.button.button-light.button-outline.activated {background:rgba(255,255,255,.3);}
+.treenibtn {font-weight:300; text-transform:uppercase; border-color:#FFF; color:#FFF; }
+.addtreeni {margin:20px auto; display:block;}
+.center {text-align:center;}
+.buttonset {margin-bottom:30px;}
+.trash {color:rgba(0,0,0,.3); float:right;margin:0 25px 0 0;}

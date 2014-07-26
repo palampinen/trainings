@@ -173,13 +173,13 @@ angular.module('treenit.controllers', [])
   
   var d = new Date();
   $scope.currentActivity = {};
-  $scope.thisweek      = Treenidata.thisweek();
-  $scope.thismonth      = Treenidata.monthCount(d.getFullYear(),d.getMonth());
+  $scope.thisweek    = Treenidata.thisweek();
+  $scope.thismonth   = Treenidata.monthCount(d.getFullYear(),d.getMonth());
   var thisWeekTitle = 'Tällä viikolla';
   var thisMonthTitle = 'Tässä kuussa';
 
   $scope.currentActivity.num = $scope.thisweek;
-  $scope.currentActivity.title = thisWeekTitle
+  $scope.currentActivity.title = thisWeekTitle;
 
 
   //Chart.js
@@ -187,12 +187,12 @@ angular.module('treenit.controllers', [])
   var ctxdata = [
 
     {
-        value: 3,
+        value: $scope.thisweek,
         color: "rgba(255,255,255,.9)",
         highlight: "rgba(255,255,255,9)"
     },
     {
-        value: 4,
+        value: 7-$scope.thisweek,
         color:"rgba(255,255,255,.2)",
         highlight: "rgba(255,255,255,.2)"
     }
@@ -313,14 +313,10 @@ angular.module('treenit.controllers', [])
 
   $scope.date = $stateParams.date;
   $scope.treenit = Treenidata.trainingsOfDay($stateParams.date);
-  
-console.log($scope.treenit)
+  $scope.future = date2Date($scope.date) > new Date();
 
   $scope.updateTrainType = function(id,tid,val){ //id,tid,val
-    console.log(id,tid,val)
     Treenidata.setTrainTypeData(id,tid,val)
-
-    console.log($scope.treenit)
   }
   
   var traintypes = [
@@ -337,13 +333,23 @@ console.log($scope.treenit)
   
   $scope.traintypes = traintypes;
   
+  $scope.addTraining = function(type){
+    Treenidata.addTraining($scope.date,type);
+    $scope.treenit = Treenidata.trainingsOfDay($stateParams.date)
+  }
+  $scope.removeTraining = function(id){
+    Treenidata.removeTraining(id);
+    $scope.treenit = Treenidata.trainingsOfDay($stateParams.date)
+  }
+
+
 })
   
 .controller('TimelineListCtrl', function($scope, Treenidata) {
   
   var days = Treenidata.all();
   $scope.days = days;
-  
+  console.log(days);
   var traintypes = [
     { id: 0, name: 'Aerobinen', icon:'man329' },
     { id: 1, name: 'Jalat', icon:'leg5' },
