@@ -165,9 +165,16 @@ Treenit.prototype.getYearCountToDate = function(year,date){
 	Parameters year, month
 */
 Treenit.prototype.getMonthCount = function(year,month){
-	return _.filter(this.data,function(training) {
+
+
+	var days = _.filter(this.data,function(training) {
 		return year == date2Date(training.date).getFullYear() && month == date2Date(training.date).getMonth();
+	});
+
+	return _.uniq(days,false,function(training) {
+		return training.date;
 	}).length;
+
 }
 
 

@@ -169,86 +169,86 @@ angular.module('treenit.controllers', [])
 
 
 
-.controller('DashCtrl', function (Trainings, $scope) {
+.controller('DashCtrl', function (Treenidata, $scope) {
   
+  var d = new Date();
+  $scope.currentActivity = {};
+  $scope.thisweek      = Treenidata.thisweek();
+  $scope.thismonth      = Treenidata.monthCount(d.getFullYear(),d.getMonth());
+  var thisWeekTitle = 'Tällä viikolla';
+  var thisMonthTitle = 'Tässä kuussa';
+
+  $scope.currentActivity.num = $scope.thisweek;
+  $scope.currentActivity.title = thisWeekTitle
 
 
-  $scope.thisweek      = 3;
-  $scope.thismonth      = 9;
+  //Chart.js
+
+  var ctxdata = [
+
+    {
+        value: 3,
+        color: "rgba(255,255,255,.9)",
+        highlight: "rgba(255,255,255,9)"
+    },
+    {
+        value: 4,
+        color:"rgba(255,255,255,.2)",
+        highlight: "rgba(255,255,255,.2)"
+    }
+    ];
+  var options = {
+    //Boolean - Whether we should show a stroke on each segment
+    segmentShowStroke : false,
+
+    //String - The colour of each segment stroke
+    segmentStrokeColor : "#FFF",
+
+    //Number - The width of each segment stroke
+    segmentStrokeWidth : 2,
+
+    //Number - The percentage of the chart that we cut out of the middle
+    percentageInnerCutout : 95, // This is 0 for Pie charts
+
+    //Number - Amount of animation steps
+    animationSteps : 50,
+
+    //String - Animation easing effect
+    animationEasing : "easeOutQuart",
+
+    //Boolean - Whether we animate the rotation of the Doughnut
+    animateRotate : false,
+
+    //Boolean - Whether we animate scaling the Doughnut from the centre
+    animateScale : false,
+
+    //String - A legend template
+    legendTemplate : "<ul class=\"<%=name.toLowerCase()%>-legend\"><% for (var i=0; i<segments.length; i++){%><li><span style=\"background-color:<%=segments[i].fillColor%>\"></span><%if(segments[i].label){%><%=segments[i].label%><%}%></li><%}%></ul>"
+
+};
+  var ctx = document.getElementById("dashChartWeek").getContext("2d"),
+      activityChart = new Chart(ctx).Doughnut(ctxdata,options);
 
 
+  $scope.updateChart = function(flag) {
+    if(flag){
+      activityChart.segments[0].value = $scope.thismonth;
+      activityChart.segments[1].value = 30-$scope.thismonth;
+      activityChart.update();
+      $scope.currentActivity.num = $scope.thismonth;
+      $scope.currentActivity.title = thisMonthTitle;
+    }
+    else {
+      activityChart.segments[0].value = $scope.thisweek;
+      activityChart.segments[1].value = 7-$scope.thisweek;
+      activityChart.update();
+      $scope.currentActivity.num = $scope.thisweek;
+      $scope.currentActivity.title = thisWeekTitle;
 
+    }
 
-   CanvasJS.addColorSet("mainChartColors",
-                [
-          "rgba(255,255,255,1)",
-         // "rgba(56,216,198,.7)",
-          "rgba(255,255,255,0.2)"      
-                ]);
-  
-  var chart = new CanvasJS.Chart("mainChart",
-  {
-      backgroundColor:'transparent',
-      animationEnabled: false,
-      interactivityEnabled: false,
-      theme: "theme1",
-      colorSet: 'mainChartColors',
-      toolTip: {
-        enabled:false
-      },
-      data: [
-      {     
-        type: "doughnut",
-        indexLabelFontFamily: "Lato",       
-        indexLabelFontSize: 20,
-        startAngle:-90,
-        indexLabelLineColor: "#CCC", 
-      //  toolTipContent: "{y}",          
+  }
 
-        dataPoints: [
-        {  y: $scope.thisweek  },
-        {  y: 7-$scope.thisweek }
-        ]
-      }
-      ]
-  });
-
-  chart.render();
-  
-  
-     CanvasJS.addColorSet("mainChartColors2",
-                [
-          "#5E8CD6",
-         // "rgba(56,216,198,.7)",
-          "rgba(0,0,0,.05)"      
-                ]);
-    var chart2 = new CanvasJS.Chart("mainChart2",
-  {
-      backgroundColor:'transparent',
-      animationEnabled: false,
-      interactivityEnabled: false,
-      theme: "theme1",
-      colorSet: 'mainChartColors',
-      toolTip: {
-        enabled:false
-      },
-      data: [
-      {     
-        type: "doughnut",
-        indexLabelFontFamily: "Lato",       
-        indexLabelFontSize: 20,
-        startAngle:-90,
-        indexLabelLineColor: "#CCC", 
-      //  toolTipContent: "{y}",          
-
-        dataPoints: [
-        {  y: $scope.thismonth  },
-        {  y: 30-$scope.thismonth }
-        ]
-      }
-      ]
-  });
-  chart2.render();
 
 })
 

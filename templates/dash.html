@@ -2,49 +2,34 @@
   <ion-nav-buttons side="left">
     <button menu-toggle="left" class="button button-icon icon ion-navicon"></button>
   </ion-nav-buttons>
-  <ion-content class="has-header bg-run">
+  <ion-content class="has-header bg-run fullheight">
     
 
-<div class="row">
-  <div class="col col-50">	
-	<div style="position:relative;">
-		<div id="mainChart" style="height: 180px; width: 100%;">
-		</div>
-		<div style="position:absolute;top:23px;width: 100%;z-index:999;">
+<div style="position:relative" ng-click="flag=!flag;updateChart(flag)">
+		<canvas id="dashChartWeek" class="bigchart" width="270" height="270"></canvas>
+		<div style="position:absolute;top:17px;left:0; width: 100%;z-index:999;">
 				<div class="center gaugeWrap big" >
 					<div class="gauge-circle">
-					<span class="title-top">Tällä viikolla</span>
-					<div class="title" ><img  src="img/squaredot_white.png" />{{thisweek}}</div>
+					<span class="title-top">{{currentActivity.title}}</span>
+					<div class="title" ><img  src="img/squaredot_white.png" />{{currentActivity.num}}</div>
 					</div>
 				</div>
 		</div>
-	</div>
-  </div>
-  <div class="col col-50">	
-	<div style="position:relative;">
-		<div id="mainChart2" style="height: 180px; width: 100%;">
-		</div>
-		<div style="position:absolute;top:23px;width: 100%;z-index:999;">
-				<div class="center gaugeWrap big" >
-					<div class="gauge-circle">
-					<span class="title-top">Tässä kuussa</span>
-					<div class="title"  ><img src="img/squaredot_white.png" />9</div>
-					</div>
-				</div>
-		</div>
-	</div>
-  </div>
 </div>
 
-<h3 id="week-list-title">5 päivää</h3>
-<div class="row week-list">
-	<div class="col"> <span>ma</span> 14</div>
-	<div class="col active"><i class="icon ion-ios7-checkmark-empty"></i> <span>su</span> 13</div>
-	<div class="col"> <span>la</span> 12</div>
-	<div class="col active"><i class="icon ion-ios7-checkmark-empty"></i><span>pe</span> 11</div>
-	<div class="col active"><i class="icon ion-ios7-checkmark-empty"></i><span>to</span> 10</div>
-	<div class="col"> <span>ke</span> 9</div>
-	<div class="col"> <span>ti</span> 8</div>
+
+
+
+
+<div class="bottom-info">
+	<h3 id="week-list-title">5 päivää</h3>
+	<div class="row week-list">
+		<div class="col"> <span>la</span> 26</div>
+		<div class="col active"><i class="icon ion-ios7-checkmark-empty"></i> <span>pe</span> 25</div>
+		<div class="col active"><i class="icon ion-ios7-checkmark-empty"></i><span>to</span> 24</div>
+		<div class="col"> <span>ke</span> 23</div>
+		<div class="col"> <span>ti</span> 22</div>
+	</div>
 </div>
 
   </ion-content>
