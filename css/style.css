@@ -27,14 +27,22 @@ html, body, h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6, button, input,
 
 
 /* Background-images */
-.bg-black {background:linear-gradient(135deg, #45CCBE 0%,#45CCBE 33%,#5E8CD6 100%);}
+.bg-black {background:linear-gradient(135deg, #45CCBE 0%,#45CCBE 33%,#5E8CD6 100%); display:block; height:100%;}
+.bg-black .pane{background:transparent}
 .bar-header {border:0 !important;box-shadow: none !important;}
-.bg-run {background:url(../img/loadman/load.png) no-repeat 25% 50%; background-size:auto 100%;}
+.bg-black .bg-run, .bg-run {background:url(../img/loadman/load.png) no-repeat 25% 50%; background-size:auto 100%;}
 
-
+/* white navbar 
 .bar-light .button.button-clear, .bar-light,.bar-light .button {color:#45CCBE;}
 .bar.bar-light .title {color:#45CCBE; font-weight:300; font-size:22px; text-transform:uppercase;}
 .bar.bar-light.bar-header {border:0 !important; box-shadow:none !important; -webkit-box-shadow:none !important;}
+*/
+/* transparent navbar */
+.bar-light .button.button-clear, .bar-light,.bar-light .button {color:#FFF;}
+.bar.bar-light .title {color:#FFF; font-weight:300; font-size:24px; text-transform:uppercase;}
+.bar.bar-light.bar-header {background-image:none; background:transparent !important; border:0 !important;border-color:transparent; box-shadow:none !important; -webkit-box-shadow:none !important;}
+
+
 
 /* Gauge */
 .center {text-align:center;}
