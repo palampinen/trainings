@@ -4,13 +4,17 @@
   </ion-nav-buttons>
 
  <ion-content class="has-header" overflow-scroll="true">
+
+
+ <h1 ng-if="!months" class="center" style="color:rgba(255,255,255,.5); font-size:20vw; line-height:50vw;"><i class="icon ion-loading-c"></i></h1>
+
  <div id="list_days">
-  <span ng-repeat="month in months" class="month">
-    <h2 class="count"><img src="img/squaredot_white.png" /> {{month.total}}</h2>
+  <span ng-repeat="month in months" class="month monthpadding">
+    <h2 class="count badge badge-assertive"><img src="img/squaredot_white.png" /> {{month.total}}</h2>
     <h2 >{{month.title}}</h2>
     <span ng-repeat="week in month.weeks" type="item-text-wrap" class="item">
         <span class="wrap" ng-repeat="day in week" >
-           <a ng-href="#/app/timeline/{{day.date}}" ng-class="{has_events: day.link,weekend: day.weekend,filled:day.filled}">{{day.text}}</a>
+           <a ng-if="day.text" ng-href="#/app/timeline/{{day.date}}" ng-class="{has_events: day.link,weekend: day.weekend,filled:day.filled}">{{day.text}}</a>
       </span>
     </span>
   </span>

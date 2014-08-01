@@ -15,7 +15,7 @@
     
       <ion-item ng-repeat="week in month.weeks" type="item-text-wrap">
         <span class="wrap" ng-repeat="day in week" >
-      <a ng-href="#/app/timeline/{{day.date}}" ng-class="{has_events: day.link,weekend: day.weekend,filled:day.filled}">{{day.text}}</a>
+      <a ng-if="day.text" ng-href="#/app/timeline/{{day.date}}" ng-class="{has_events: day.link,weekend: day.weekend,filled:day.filled}">{{day.text}}</a>
     
     </span>
       </ion-item>

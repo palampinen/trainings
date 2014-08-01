@@ -211,7 +211,7 @@ angular.module('treenit.controllers', [])
     percentageInnerCutout : 95, // This is 0 for Pie charts
 
     //Number - Amount of animation steps
-    animationSteps : 50,
+    animationSteps : 20,
 
     //String - Animation easing effect
     animationEasing : "easeOutQuart",
@@ -254,12 +254,16 @@ angular.module('treenit.controllers', [])
 
 //TMP
 .controller('PlaylistsCtrl', function($scope,Treenidata,$state) {
- 
-  var months = Treenidata.monthCalendarFromBeginning();
-  $scope.months = months;
 
+
+  $scope.months="";
   
-  console.log( $scope.months)
+
+ionic.DomUtil.ready(function(){
+    $scope.months = Treenidata.monthCalendarFromBeginning()
+});
+  
+ // console.log( $scope.months)
 
   $scope.getItemHeight = function(item,index){
     return item.weeks.length * 62 + 100;
