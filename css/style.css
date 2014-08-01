@@ -178,9 +178,9 @@ background-color:transparent;
 #list_days .month {background:transparent;display:inline-block;width:100%;padding-top:20px;}
 #list_days .monthpadding {padding-bottom:60px;}
 #list_days .month h2 {color:rgba(255,255,255,.5); font-weight:300; text-align:right; line-height:30px;  margin:0px 0 0 ; padding:0 20px 0 0;font-size:18px; text-transform:uppercase;font-family: Lato;}
-#list_days .month h2.count {float:left;  text-align:left; color:#FFF ;  padding:0 0 0 15px}
-#list_days .month h2.count img{height: 30px; float: left; margin:0 5px;}
-
+#list_days .month h2.count {float:left;  text-align:left; color:#FFF ;  margin:0 0 0 15px}
+#list_days .month h2.count img{height: 30px; float: left; margin:0 5px 0;}
+#list_days .month h2.count.badge {padding:5px 10px 5px 5px;}
 
 #list_trainings .item:before{display:block;content:""; width:1px; height:100%; min-height:101px; background:rgba(255,255,255,.4); background:linear-gradient(180deg, rgba(255,255,255,.2) 0%, rgba(255,255,255,.5) 20px, rgba(255,255,255,.2) 100%); position:absolute; left:24px;top:0; box-shadow:0 0 6px rgba(255,255,255,0.5);}
 #list_trainings .item {border-color:rgba(255,255,255,.1);background:transparent;border-width:0 0 0 0;margin:0; padding-left:50px; width:100%;height:100px;}

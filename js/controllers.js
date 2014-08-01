@@ -255,16 +255,13 @@ angular.module('treenit.controllers', [])
 //TMP
 .controller('PlaylistsCtrl', function($scope,Treenidata,$state) {
 
-
-  $scope.months="";
+$scope.months="";
   
 
 ionic.DomUtil.ready(function(){
     $scope.months = Treenidata.monthCalendarFromBeginning()
 });
   
- // console.log( $scope.months)
-
   $scope.getItemHeight = function(item,index){
     return item.weeks.length * 62 + 100;
   }
