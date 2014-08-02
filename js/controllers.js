@@ -255,12 +255,9 @@ angular.module('treenit.controllers', [])
 //TMP
 .controller('PlaylistsCtrl', function($scope,Treenidata,$state) {
 
-$scope.months="";
-  
+  //$scope.months="";
+  $scope.months = Treenidata.monthCalendarFromBeginning()
 
-ionic.DomUtil.ready(function(){
-    $scope.months = Treenidata.monthCalendarFromBeginning()
-});
   
   $scope.getItemHeight = function(item,index){
     return item.weeks.length * 62 + 100;
@@ -370,6 +367,10 @@ $scope.traintypes = traintypes;
     return item.weeks.length * 62 + 100;
   }
   */
+
+ionic.DomUtil.ready(function(){
+  $scope.rdy = true;
+});
   
   
 })
