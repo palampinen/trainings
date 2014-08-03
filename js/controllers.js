@@ -3,9 +3,7 @@ angular.module('treenit.controllers', [])
 .controller('AppCtrl', function($scope, $state, $ionicModal, $timeout, AppAuth, Trainings, User) {
   
 
-
-    $scope.currentuser = User.all();
-    console.log('test');
+  $scope.currentuser = User.all();
 
 
   var startApp = function() {
@@ -264,6 +262,18 @@ angular.module('treenit.controllers', [])
   }
   
 
+})
+
+
+//List months
+.controller('MonthsCtrl', function($scope,Treenidata) {
+  // todo: better algorithm for this, gets way too much data for this purpose
+  $scope.months = Treenidata.monthCalendarFromBeginning()
+  console.log($scope.months)
+})
+// Single month
+.controller('MonthCtrl', function($scope,$stateParams,Treenidata) {
+  $scope.month = Treenidata.monthCalendar($stateParams.year,$stateParams.month)
 })
 
 //TMP

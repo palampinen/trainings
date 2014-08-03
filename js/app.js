@@ -110,6 +110,25 @@ angular.module('treenit', ['ionic', 'treenit.controllers', 'treenit.services'])
         }
       }
     })
+.state('app.months', {
+      url: '/months',
+      views: {
+        'menuContent': {
+          templateUrl: 'templates/app-timeline-months.html',
+          controller: 'MonthsCtrl'
+        }
+      }
+    })
+
+.state('app.month', {
+      url: '/month/:year/:month',
+      views: {
+        'menuContent': {
+          templateUrl: 'templates/app-timeline-month.html',
+          controller: 'MonthCtrl'
+        }
+      }
+    })
   
   .state('app.timeline-detail', {
       url: '/timeline/:date',

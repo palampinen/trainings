@@ -27,7 +27,12 @@ html, body, h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6, button, input,
 
 
 /* Background-images */
-.bg-black {background:linear-gradient(135deg, #45CCBE 0%,#45CCBE 33%,#5E8CD6 100%); display:block; height:100%;}
+.bg-black { display:block; height:100%;
+    background:-ms-linear-gradient(135deg, #45CCBE 0%,#45CCBE 33%,#5E8CD6 100%);
+    background:-webkit-linear-gradient(135deg, #45CCBE 0%,#45CCBE 33%,#5E8CD6 100%);
+    background:linear-gradient(135deg, #45CCBE 0%,#45CCBE 33%,#5E8CD6 100%);
+
+}
 .bg-black .pane{background:transparent}
 .bar-header {border:0 !important;box-shadow: none !important;}
 .bg-black .bg-run, .bg-run {background:url(../img/loadman/load.png) no-repeat 25% 50%; background-size:auto 100%;}
@@ -143,7 +148,7 @@ background-color:transparent;
 
 
 /* CALENDAR / HISTORY */
-#list_days .item {border-color:rgba(255,255,255,0.1);background:transparent;border-width:0 0 1px 0;margin:0;}
+#list_days .item, #list_months .item {border-color:rgba(255,255,255,0.1);background:transparent;border-width:0 0 1px 0;margin:0;}
 #list_days .item-complex .item-content {padding-right:15px;background:transparent;}
 #list_days span.wrap {
 	width: 13%;
@@ -151,6 +156,8 @@ background-color:transparent;
 	float:left;
 	margin: 0 1% 0 0;
 	position: relative;
+    display:block; 
+    min-height: 10px; 
 }
 #list_days a span.wrap:last-child {margin-right:0;}
 #list_days span > a {
@@ -175,7 +182,7 @@ background-color:transparent;
 #list_days span > a.has_events {color:rgba(255,255,255,.9);font-weight:600;border-color:rgba(255,255,255,.9); }
 #list_days span > a.filled {background-color:#FFF; color:#4BBDC3;}
 
-#list_days .month {background:transparent;display:inline-block;width:100%;padding-top:20px;}
+#list_days .month {background:transparent;display:inline-block;width:100%;padding-top:20px;border-bottom:0;}
 #list_days .monthpadding {padding-bottom:60px;}
 #list_days .month h2 {color:rgba(255,255,255,.5); font-weight:300; text-align:right; line-height:30px;  margin:0px 0 0 ; padding:0 20px 0 0;font-size:18px; text-transform:uppercase;font-family: Lato;}
 #list_days .month h2.count {float:left;  text-align:left; color:#FFF ;  margin:0 0 0 15px}
@@ -194,6 +201,20 @@ background-color:transparent;
 #list_trainings .item .treenicon {float:left; background:#fff;color:#45CCBE; font-size:17px; border-radius:50%;display:inline-block; width:28px; height:28px; line-height:28px; text-align:center;  }
 
 
+/* List Months */
+
+#list_months .month {background:transparent;display:inline-block;width:100%;padding-top:0px;color:rgba(255,255,255,.9);border-bottom:1px solid rgba(255,255,255,.5);}
+#list_months .month .item-content{background:transparent;padding:15px 40px 15px 15px;}
+#list_months .month h2 {color:rgba(255,255,255,.9); font-weight:300; display:inline-block; line-height:30px;  margin:0px 0 0 ; padding:0 20px 0 0;font-size:18px; text-transform:uppercase;font-family: Lato;}
+#list_months .month h2.count {float:right;  text-align:left; color:#FFF ;  margin:0 15px 0;}
+#list_months .month h2.count img{height: 24px; float: left; margin:0 5px 0;}
+#list_months .month h2.count.badge {padding:4px 10px 4px 5px; font-size:16px; line-height:24px; position:relative;top:auto;left:auto; right:auto; margin-top:-2px;}
+
+/* Single month */
+#list_days .month.single {padding-top:30px;}
+#list_days .month.single h2.count {margin-bottom:20px; float:none; text-align:right;}
+
+
 
 
 /* Detail Date Page */
@@ -203,6 +224,7 @@ background-color:transparent;
 .treeni .num{font-family:Lato; font-size:25px;text-align:center;color:#EEE;}
 .treeni {color:#EEE; margin:15px 0 ; padding:15px 0; border-bottom:1px solid rgba(255,255,255,.2);clear:both;}
 .datecircle {margin: 20px auto 10px; color: #45CCBE; background: #FFF; line-height:110px; display: block; border-radius: 50%; font-family: Lato; text-align: center; height: 110px; width: 110px; font-size: 18px;}
+
 
 
 .traintypes .item {
