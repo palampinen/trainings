@@ -203,12 +203,13 @@ background-color:transparent;
 
 /* List Months */
 
-#list_months .month {background:transparent;display:inline-block;width:100%;padding-top:0px;color:rgba(255,255,255,.9);border-bottom:1px solid rgba(255,255,255,.3);}
-#list_months .month .item-content{background:transparent;padding:15px 40px 15px 15px;}
+#list_months .month {background:transparent;display:inline-block;width:100%;padding:0px; margin:0;color:rgba(255,255,255,.9);border-bottom:0}
+#list_months .month .item-content{background:transparent;padding:10px 30px 10px 15px;  border-bottom:1px solid rgba(255,255,255,.3);}
 #list_months .month a.activated {background:rgba(255,255,255,.08);}
 #list_months .month h2 {color:rgba(255,255,255,.9); font-weight:300; display:inline-block; line-height:30px;  margin:0px 0 0 ; padding:0 20px 0 0;font-size:18px; text-transform:uppercase;font-family: Lato;}
 #list_months .month h2.count {float:right;  text-align:left; color:#FFF ;  margin:0 15px 0;}
-#list_months .month h2.count img{height: 28px; float: left; margin:0 5px;}
+#list_months .month h2.count img{height: 22px; float: left; margin:0 5px;}
+#list_months .month h2.count.badge-light{color:#45CCBE; background: rgba(255,255,255,.2);color:#FFF;}
 #list_months .month h2.count.badge {padding:4px 10px 4px 5px; font-size:16px; line-height:24px; position:relative;top:auto;left:auto; right:auto; margin-top:-2px;}
 #list_months .month .icon {color:rgba(255,255,255,.3);}
 
