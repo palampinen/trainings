@@ -7,9 +7,9 @@
 
 
  <ion-list id="list_months">
-  <ion-item ng-repeat="month in months" ng-href="#/app/month/{{month.year}}/{{month.monthIndex}}" class="month item-icon-right">
+  <ion-item ng-repeat="month in months" ng-href="#/app/month/{{month.year}}/{{month.monthIndex-1}}" class="month item-icon-right">
     <h2 >{{month.title}}</h2>
-    <h2 class="count badge" ng-class="{'badge-assertive': month.total<10, 'badge-energized':month.total <15 && month.total > 9, 'badge-balanced':month.total>14 }"><img src="img/squaredot_white.png" /> {{month.total}}</h2>
+    <h2 class="count" ng-class="{'badge-assertive': month.total<10, 'badge-energized':month.total <15 && month.total > 9, 'badge-balanced':month.total>14 }"><img src="img/squaredot_white.png" /> {{month.total}}</h2>
     <i class="icon ion-ios7-arrow-right"></i>
   </ion-item>
 

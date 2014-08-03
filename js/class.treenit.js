@@ -237,8 +237,8 @@ Treenit.prototype.getMonthCalendar = function(year,month){
 		'joulu'
 	];
 	
-	var monthName = months[month],
-		monthIndex = month;
+	var monthName = months[parseInt(month)],
+		monthIndex = parseInt(month);
 	
 // Begin: From full-calendar
 

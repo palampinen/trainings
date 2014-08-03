@@ -273,7 +273,9 @@ angular.module('treenit.controllers', [])
 })
 // Single month
 .controller('MonthCtrl', function($scope,$stateParams,Treenidata) {
+  console.log($stateParams.month)
   $scope.month = Treenidata.monthCalendar($stateParams.year,$stateParams.month)
+  console.log($scope.month);
 })
 
 //TMP
