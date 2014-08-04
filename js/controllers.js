@@ -273,9 +273,77 @@ angular.module('treenit.controllers', [])
 })
 // Single month
 .controller('MonthCtrl', function($scope,$stateParams,Treenidata) {
-  console.log($stateParams.month)
-  $scope.month = Treenidata.monthCalendar($stateParams.year,$stateParams.month)
-  console.log($scope.month);
+ 
+  $scope.month = Treenidata.monthCalendar($stateParams.year,$stateParams.month);
+  
+
+  var ctxdata = [
+
+    {
+        value: 1,
+        color: "rgba(255,255,255,.2)",
+        highlight: "rgba(255,255,255,9)",
+        label:'Kädet'
+    },
+    {
+        value: 1,
+        color: "rgba(255,255,255,.3)",
+        highlight: "rgba(255,255,255,9)",
+        label:'Jalat'
+    },
+    {
+        value: 2,
+        color: "rgba(255,255,255,.5)",
+        highlight: "rgba(255,255,255,9)",
+        label:'Rinta'
+    },
+    {
+        value: 3,
+        color: "rgba(255,255,255,.6)",
+        highlight: "rgba(255,255,255,9)",
+        label:'Selkä'
+    },
+
+    ];
+  var options = {
+    //Boolean - Whether we should show a stroke on each segment
+    segmentShowStroke : false,
+
+    //String - The colour of each segment stroke
+    segmentStrokeColor : "rgba(255,255,255,.6)",
+
+    //Number - The width of each segment stroke
+    segmentStrokeWidth : 1,
+
+    //Number - The percentage of the chart that we cut out of the middle
+    percentageInnerCutout : 65, // This is 0 for Pie charts
+
+    //Number - Amount of animation steps
+    animationSteps : 20,
+
+    //String - Animation easing effect
+    animationEasing : "easeOutQuart",
+
+    //Boolean - Whether we animate the rotation of the Doughnut
+    animateRotate : true,
+
+    //Boolean - Whether we animate scaling the Doughnut from the centre
+    animateScale : false,
+
+    //String - A legend template
+    legendTemplate : "<ul class=\"<%=name.toLowerCase()%>-legend\"><% for (var i=0; i<segments.length; i++){%><li><span style=\"background-color:<%=segments[i].fillColor%>\"></span><%if(segments[i].label){%><%=segments[i].label%><%}%></li><%}%></ul>"
+
+};
+  $scope.trainvarLoaded = false;
+  $scope.slideHasChanged = function(index){
+    if(index = 1 && !$scope.trainvarLoaded) {
+       var ctx = document.getElementById("trainvar").getContext("2d"),
+        activityChart = new Chart(ctx).Doughnut(ctxdata,options);
+        $scope.trainvarLoaded = true;
+      }
+
+  }
+
 })
 
 //TMP

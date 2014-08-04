@@ -146,6 +146,9 @@ background-color:transparent;
 
 }
 
+.slider-pager .slider-pager-page {color:#FFF;}
+.fullheight .slider, .fullheight .slider-slides {min-height:100%;}
+.fullheight .slider-slide {min-height:90%;}
 
 /* CALENDAR / HISTORY */
 #list_days .item, #list_months .item {border-color:rgba(255,255,255,0.1);background:transparent;border-width:0 0 1px 0;margin:0;}
@@ -203,21 +206,26 @@ background-color:transparent;
 
 /* List Months */
 
-#list_months .month {background:transparent;display:inline-block;width:100%;padding:0px; margin:0;color:rgba(255,255,255,.9);border-bottom:0}
-#list_months .month .item-content{background:transparent;padding:10px 30px 10px 15px;  border-bottom:1px solid rgba(255,255,255,.3);}
-#list_months .month a.activated {background:rgba(255,255,255,.08);}
-#list_months .month h2 {color:rgba(255,255,255,.9); font-weight:300; display:inline-block; line-height:30px;  margin:0px 0 0 ; padding:0 20px 0 0;font-size:18px; text-transform:uppercase;font-family: Lato;}
+#list_months .month {background:transparent;display:inline-block;width:100%;padding:0px;  margin:0;color:rgba(255,255,255,.9);border-bottom:0; overflow:visible;}
+#list_months .month .item-content{background:transparent;padding:15px 30px 15px 15px; line-height:35px; overflow:visible; border-bottom:0;}
+#list_months .month:nth-child(2n) a{background:rgba(255,255,255,.08);}
+#list_months .month a.activated {background:rgba(255,255,255,.2);}
+
+#list_months .month h2 {color:rgba(255,255,255,.7); font-weight:300; display:inline-block;  margin:9px 0 0 ; padding:0 20px 0 0;font-size:18px; text-transform:uppercase;font-family: Lato;}
 #list_months .month h2.count {float:right;  text-align:left; color:#FFF ;  margin:0 15px 0;}
 #list_months .month h2.count img{height: 22px; float: left; margin:0 5px;}
-#list_months .month h2.count.badge-light{color:#45CCBE; background: rgba(255,255,255,.2);color:#FFF;}
-#list_months .month h2.count.badge {padding:4px 10px 4px 5px; font-size:16px; line-height:24px; position:relative;top:auto;left:auto; right:auto; margin-top:-2px;}
-#list_months .month .icon {color:rgba(255,255,255,.3);}
+#list_months .month .count.badge-light{ color:#FFF; color:rgba(255,255,255,.7); float:right; margin:0px 20px 0 0; font-size:26px; line-height:40px; font-weight:300; background: transparent;padding:0;  position:relative;top:auto;left:auto; right:auto;}
+#list_months .month .count.badge-light span{ display:block;color:rgba(0,0,0,.2);margin:5px 0 0 5px; font-weight:900; font-size:40%; text-transform: uppercase;}
+#list_months .month .icon {color:rgba(255,255,255,.2);}
 
 /* Single month */
-#list_days .month.single {padding-top:30px;}
+#list_days .month.single {padding-top:0px;}
 #list_days .month.single h2.count {margin-bottom:20px; float:none;  text-align:right;}
 
-
+.stats-slide {padding-top:50px;}
+#trainvar {margin-left:10px;}
+.trainingList span {display: block;color:#FFF; font-size:16px; margin:10px 0; }
+.trainingList span .treenicon {font-size:130%;width:20px;text-alig:center;display:inline-block; margin-right:15px; opacity:0.6;}
 
 
 /* Detail Date Page */
@@ -259,3 +267,10 @@ background-color:transparent;
 .center {text-align:center;}
 .buttonset {margin-bottom:30px;}
 .trash {color:rgba(0,0,0,.3); float:right;margin:0 0px 0 0;padding:2px 30px;}
+
+
+ @media screen and (orientation:landscape) {
+
+    .bg-black .bg-run, .bg-run { background-size: 140% auto;}
+}
+

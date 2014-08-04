@@ -4,19 +4,67 @@
     <!--<button menu-toggle="left" class="button button-icon icon ion-navicon"></button>-->
   </ion-nav-buttons>
 
+ <ion-content class="has-header fullheight" overflow-scroll="true" id="list_days">
 
- <ion-content class="has-header" overflow-scroll="true" id="list_days">
+<ion-slide-box on-slide-changed="slideHasChanged($index)">
+  <ion-slide>
+    <div class="month single">
+      <span ng-repeat="week in month.weeks" type="item-text-wrap" class="item">
+          <span class="wrap" ng-repeat="day in week" >
+             <a ng-if="day.text" ng-href="#/app/timeline/{{day.date}}" ng-class="{has_events: day.link,weekend: day.weekend,filled:day.filled}">{{day.text}}</a>
+          </span>
+      </span>
+    </div>
+  </ion-slide>
+  <ion-slide class="stats-slide">
+
+  <div class="row" style="padding-bottom:100px;">
+    <div class="col">
+      <canvas id="trainvar" width="150" height="150"></canvas>
+    </div>
+    <div class="col trainingList">
+      <span><i class="treenicon flaticon-back"></i>53% Selkä</span>
+      <span><i class="treenicon flaticon-shirtfront"></i>29% Rinta</span>
+      <span><i class="treenicon flaticon-bicep"></i>14% Kädet</span>
+      <span><i class="treenicon flaticon-leg5"></i>14% Jalat</span>
+    </div>
+  </div>
+
+  
+    <div class="row numrow bottom-info">
+    <div class="col col-50 bordercol">
+      <div class="left numWrap">
+
+        <h3 class="title">Yhteensä</h3>
+        <span class="num" id="num1">{{month.total}}</span>
+      <!--    
+        <h3 class="title">30 päivän aikana</h3>
+        <span class="num" id="num2">{{past30Days}} </span> <i class="numicon icon ion-ios7-arrow-thin-up"></i> <i class="numicon down icon ion-ios7-arrow-thin-down"></i> <i class="numicon icon ion-ios7-minus-empty"></i>
+      -->
+      </div>
+    </div>
+    <div class="col col-50">
+      <div class="right numWrap">
+  
+        <h3 class="title">kCal</h3>
+        <span class="num" id="num3">{{month.total*335}}</span>
+      <!--    
+        <h3 class="title">Yhteensä</h3>
+        <span class="num" id="num4">{{total}}</span>
+      -->
+      </div>
+    </div>
+
+  </div>
+
+
+  </ion-slide>
+
+</ion-slide-box>
+
 
  
-  <div class="month single">
-    <h2 class="count badge" ng-class="{'badge-assertive': month.total<10, 'badge-energized':month.total <15 && month.total > 9, 'badge-balanced':month.total>14 }"><img src="img/squaredot_white.png" /> {{month.total}}</h2>
-    <!--<h2 >{{month.title}}</h2>-->
-    <span ng-repeat="week in month.weeks" type="item-text-wrap" class="item">
-        <span class="wrap" ng-repeat="day in week" >
-           <a ng-if="day.text" ng-href="#/app/timeline/{{day.date}}" ng-class="{has_events: day.link,weekend: day.weekend,filled:day.filled}">{{day.text}}</a>
-        </span>
-    </span>
-  </div
-  
+
+
   </ion-content>  
 </ion-view>
