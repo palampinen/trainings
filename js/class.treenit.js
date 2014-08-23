@@ -766,10 +766,11 @@ Treenit.prototype.getLastDaysActivity = function(days) {
 	d.setDate(d.getDate() - days);
 
 	// Get the training dates in array
-	while( date2Date(this.data[i].date) >= d){
-		dates.push(date2Date(this.data[i].date).getTime())
+	while( date2Date(thisdata[i].date) >= d){
+		dates.push(date2Date(thisdata[i].date).getTime())
 		i++
 	}
+
 
 	// Loop Days to get day names and date, combine with activity
 	for(j = 0; j<days;j++) {
