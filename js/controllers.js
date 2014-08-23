@@ -445,7 +445,7 @@ angular.module('treenit.controllers', [])
   }
   
   $scope.getDayOffset = function(item,index){
-    return ($scope.days[index+1] && $scope.days[index+1].date) ? days_between( date2Date(item.date), date2Date($scope.days[index+1].date)) : 0;
+    return ($scope.days[index+1] && $scope.days[index+1].date) ? days_between( date2Date(item.date), date2Date($scope.days[index+1].date))-1 : 0;
   }
 
   /*

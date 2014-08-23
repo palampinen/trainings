@@ -28,7 +28,7 @@
 
        </a>
 
-       <span class="day-offset" ng-if="getDayOffset(daygroup, $index) > 1"><i class="icon ion-ios7-bolt-outline"></i> <span>{{getDayOffset(daygroup, $index)}}</span> päivää</span>
+       <span class="day-offset" ng-if="getDayOffset(daygroup, $index) >= 1"> <i class="icon ion-ios7-checkmark-outline"></i> <span class="count">{{getDayOffset(daygroup, $index)}}</span> pv taukoa </span>
       </ion-item>
     </ion-list>
 	
