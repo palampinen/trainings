@@ -21,7 +21,7 @@ html, body, h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6, button, input,
 .menu .item a {color:#bbb;}
 .menu .item:active, .menu .item:hover, .menu .item:focus, .menu .item.activated,
 .menu .item a:active, .menu .item a:hover, .menu .item a:focus,.menu .item a.activated {background:rgba(255,255,255,.04);}
-.menu .item a > .icon {color:#fff;font-size:120%;margin-right:10px; width:20px; display:inline-block; text-align:center;text-shadow:0 0 10px #DDD; }
+.menu .item a > .icon {color:#fff;font-size:120%;margin-right:10px; width:20px; display:inline-block; text-align:center;text-shadow:0 0 10px #eee; }
 .menu .item .iconimg {width:20px;float:left;margin:2px 15px 0 0;}
 .menu .bar-header {background:#111; border-color:#111;font-size:120%;}
 
@@ -112,6 +112,8 @@ background-color:transparent;
 .week-list .col .icon{font-size:30px;}
 .week-list .col.active {background:#fff; color:#45CCBE;padding-top:0;}
 
+.week-list .col:hover, .week-list .col:active, .week-list .col.activated {background: rgba(255,255,255,.2)}
+.week-list .col.active:hover, .week-list .col.active:active, .week-list .col.active.activated {background: #45CCBE;color:#FFF;}
 
 
 
@@ -132,8 +134,8 @@ background-color:transparent;
 .numWrap {margin-top:-7px;}
 .numWrap.left {text-align:left;}
 .numWrap.right {text-align:right;}
-.numWrap h3 {text-transform:uppercase; font-weight:900;font-size:11px;white-space:nowrap;margin-bottom:0;color:rgba(255,255,255,.5)}
-.numWrap .num{color:#fff;font-size:24px;color:#ddd;font-weight:300;}
+.numWrap h3 {text-transform:uppercase; font-weight:900;font-size:11px;white-space:nowrap;margin-bottom:0;color:rgba(0, 0, 0,.35)}
+.numWrap .num{color:#fff;font-size:25px;line-height:30px;color:#fff;font-weight:300;}
 .numWrap .numicon  {font-size:30px;color:#45CCBE;}
 .numWrap .numicon.down  {color:#CF5777;}
 .bordercol {border-right:1px solid rgba(255,255,255,.1);padding-bottom:0 !important;}
@@ -148,7 +150,7 @@ background-color:transparent;
 
 .slider-pager .slider-pager-page {color:#FFF;}
 .fullheight .slider, .fullheight .slider-slides {min-height:100%;}
-.fullheight .slider-slide {min-height:90%;}
+.fullheight .slider-slide {min-height:90%;min-height: 88vh;}
 
 /* CALENDAR / HISTORY */
 #list_days .item, #list_months .item {border-color:rgba(255,255,255,0.1);background:transparent;border-width:0 0 1px 0;margin:0;}
@@ -193,15 +195,23 @@ background-color:transparent;
 #list_days .month h2.count.badge {padding:4px 10px 4px 5px; font-size:16px; line-height:24px; position:relative;top:auto;left:auto; right:auto; margin-top:-2px;}
 
 #list_trainings .item:before{display:block;content:""; width:1px; height:100%; min-height:101px; background:rgba(255,255,255,.4); background:linear-gradient(180deg, rgba(255,255,255,.2) 0%, rgba(255,255,255,.5) 20px, rgba(255,255,255,.2) 100%); position:absolute; left:24px;top:0; box-shadow:0 0 6px rgba(255,255,255,0.5);}
-#list_trainings .item {border-color:rgba(255,255,255,.1);background:transparent;border-width:0 0 0 0;margin:0; padding-left:50px; width:100%;height:100px;}
-/*#list_trainings .item:first-child:before {top:25px;}*/
-#list_trainings .item a {display:block; text-decoration:none; font-family:Lato; color:#FFF;font-weight:300;font-size:120%;text-transform:uppercase;}
-#list_trainings .item a:before {display:block;content:""; width:9px; height:9px;box-shadow:0 0 8px rgba(255,255,255,0.7); border-radius:50%; background:#FFF;position:absolute; left:20px;top:21px;}
-#list_trainings .item a span{ font-weight:900; font-size:55%; font-family:Lato; color:rgba(0,0,0,.3);display:block;}
+#list_trainings .item {border-color:rgba(255,255,255,.1);background:transparent;border-width:0 0 0 0;margin:0; padding-left:50px; width:100%;height:100%;}
+#list_trainings .item.first:before {top:25px;}
+#list_trainings .item a {display:block; text-decoration:none; font-family:Lato; color:#FFF;font-weight:300;font-size:120%;text-transform:uppercase; margin-bottom: 25px; clear:both;}
+#list_trainings .item a:before {display:block;content:""; width:9px; height:9px;box-shadow:0 0 8px rgba(255,255,255,0.7); border-radius:100%; -webkit-border-radius:100%; background:#FFF;position:absolute; left:20px;top:21px;}
+#list_trainings .item a span{ font-weight:900; font-size:55%; font-family:Lato; color:rgba(0,0,0,.35);display:block;}
 
 #list_trainings .item a .trainicons {float:right;margin-top:-6px;}
 #list_trainings .item a .trainicon { display:inline-block; width:28px; height:28px; margin:0px 5px 0 0; }
 #list_trainings .item .treenicon {float:left; background:#fff;color:#45CCBE; font-size:17px; border-radius:50%;display:inline-block; width:28px; height:28px; line-height:28px; text-align:center;  }
+
+#list_trainings .item .day-offset {color:rgba(255,255,255,.4); line-height:30px; font-size:70%; font-weight:400; display: inline-block; margin:0 auto; text-align: center;  top:55%;left:50%;margin-left:-20px;position:absolute;}
+#list_trainings .item .day-offset .icon {font-size:30px; line-height:30px; float:left; margin-right: 10px; color:rgba(255,255,255,.8);}
+
+#list_trainings .item.dot-2 a:before { width:11px; height:11px;left:19px;top:20px; }
+#list_trainings .item.dot-3 a:before { width:13px; height:13px;left:18px;top:19px; }
+#list_trainings .item.dot-4 a:before { width:15px; height:15px;left:17px;top:18px; }
+#list_trainings .item.dot-4 a:before { width:17px; height:17px;left:16px;top:17px; }
 
 
 /* List Months */
@@ -211,10 +221,10 @@ background-color:transparent;
 #list_months .month:nth-child(2n) a{background:rgba(255,255,255,.08);}
 #list_months .month a.activated {background:rgba(255,255,255,.2);}
 
-#list_months .month h2 {color:rgba(255,255,255,.7); font-weight:300; display:inline-block;  margin:9px 0 0 ; padding:0 20px 0 0;font-size:18px; text-transform:uppercase;font-family: Lato;}
+#list_months .month h2 {color:rgba(255,255,255,.8); font-weight:300; display:inline-block;  margin:9px 0 0 ; padding:0 20px 0 0;font-size:18px; text-transform:uppercase;font-family: Lato;}
 #list_months .month h2.count {float:right;  text-align:left; color:#FFF ;  margin:0 15px 0;}
 #list_months .month h2.count img{height: 22px; float: left; margin:0 5px;}
-#list_months .month .count.badge-light{ color:#FFF; color:rgba(255,255,255,.7); float:right; margin:0px 20px 0 0; font-size:26px; line-height:40px; font-weight:300; background: transparent;padding:0;  position:relative;top:auto;left:auto; right:auto;}
+#list_months .month .count.badge-light{ color:#FFF; color:rgba(255,255,255,.8); float:none; margin:0px 20px 0 0; font-size:26px; line-height:40px; font-weight:300; background: transparent;padding:0;  position:absolute;top:13px;left:auto; right:30px;}
 #list_months .month .count.badge-light span{ display:block;color:rgba(0,0,0,.2);margin:5px 0 0 5px; font-weight:900; font-size:40%; text-transform: uppercase;}
 #list_months .month .icon {color:rgba(255,255,255,.2);}
 

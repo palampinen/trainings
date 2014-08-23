@@ -180,6 +180,10 @@ angular.module('treenit.controllers', [])
   $scope.currentActivity.title = thisWeekTitle;
 
 
+
+  $scope.lastDaysActivity   = Treenidata.lastDaysActivity(5);
+ 
+
   //Chart.js
 
   var ctxdata = [
@@ -426,32 +430,29 @@ angular.module('treenit.controllers', [])
   
 .controller('TimelineListCtrl', function($scope, Treenidata) {
   
-  var days = Treenidata.all();
-  $scope.days = days;
-  console.log(days);
-  var traintypes = [
-    { id: 0, name: 'Aerobinen', icon:'man329' },
-    { id: 1, name: 'Jalat', icon:'leg5' },
-    { id: 2, name: 'Selkä', icon:'back' },
-    { id: 3, name: 'Rinta', icon:'shirtfront' },
-    { id: 4, name: 'Kädet', icon:'bicep' },
-    //{ id: 5, name: 'Hauis', icon:'hand' },
-    //{ id: 6, name: 'Ojentaja', icon:'hand' },
-    { id: 5, name: 'Vatsa', icon:'abdominals' },
-    
-  ];
+ // var days = Treenidata.all();
+  $scope.days = Treenidata.allGrouped('date');
+  console.log($scope.days)
   
-$scope.traintypes = traintypes;
-  /*
-  $scope.getItemHeight = function(item,index){
-    return item.weeks.length * 62 + 100;
-  }
-  */
+  $scope.traintypes = Treenidata.trainTypes();
 
-ionic.DomUtil.ready(function(){
-  $scope.rdy = true;
-});
+
   
+  $scope.getItemHeight = function(item,index){
+    var dayAddHeight = 100;
+        daysBetween = ($scope.days[index+1] && $scope.days[index+1].date) ? days_between( date2Date(item.date), date2Date($scope.days[index+1].date))-1 : 0;
+    return item.data.length * 50 + 50 + (dayAddHeight * daysBetween)
+  }
+  
+  $scope.getDayOffset = function(item,index){
+    return ($scope.days[index+1] && $scope.days[index+1].date) ? days_between( date2Date(item.date), date2Date($scope.days[index+1].date)) : 0;
+  }
+
+  /*
+  ionic.DomUtil.ready(function(){
+    $scope.rdy = true;
+  });
+  */
   
 })
 

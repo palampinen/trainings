@@ -22,13 +22,13 @@
 
 
 <div class="bottom-info">
-	<h3 id="week-list-title">5 päivää</h3>
+	<h3 id="week-list-title">{{lastDaysActivity.length}} päivää</h3>
 	<div class="row week-list">
-		<a class="col" href="#/app/timeline/26.7.2014"> <span>la</span> 26</a>
-		<a class="col" href="#/app/timeline/25.7.2014"> <span>pe</span> 25</a>
-		<a class="col" href="#/app/timeline/24.7.2014"> <span>to</span> 24</a>
-		<a class="col active" href="#/app/timeline/23.7.2014"><i class="icon ion-ios7-checkmark-empty"></i> <span>ke</span> 23</a>
-		<a class="col active" href="#/app/timeline/22.7.2014"><i class="icon ion-ios7-checkmark-empty"></i><span>ti</span> 22</a>
+		<a ng-repeat="day in lastDaysActivity" class="col" ng-class="{active: day.active}" ng-href="#/app/timeline/{{day.fullDate}}">
+				<i class="icon ion-ios7-checkmark-empty" ng-if="day.active"></i> 
+				<span>{{day.name}}</span> 
+				{{day.date}}
+		</a>
 	</div>
 </div>
 

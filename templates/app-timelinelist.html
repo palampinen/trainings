@@ -5,15 +5,16 @@
       <button menu-toggle="left" class="button button-icon icon ion-navicon"></button>
   </ion-nav-buttons>
 
+<!--
   <ion-nav-buttons side="right">
     <button ng-click="" class="button button-icon icon ion-ios7-plus-empty"></button>
   </ion-nav-buttons>
-
+-->
 
  <ion-content class="has-header" >
    	<ion-list id="list_trainings">
-      <ion-item collection-repeat="day in days" collection-item-width="'100%'" collection-item-height="100" class="month">
-			 <a ng-href="#/app/timeline/{{day.date}}"><span>{{day.date}}</span>
+      <ion-item collection-repeat="daygroup in days" collection-item-width="'100%'" collection-item-height="getItemHeight(daygroup, $index)" ng-style="{height: getItemHeight(daygroup, $index)+'px'}" class="month item dot-{{daygroup.data.length}}" ng-class="{first: $index==0}">
+			 <a ng-repeat="day in daygroup.data" ng-href="#/app/timeline/{{day.date}}"><span ng-if="$index<=0" >{{day.date}}</span> 
 
 <span class="trainicons">
           <span class="trainicon" ng-repeat="traintype in traintypes" ng-if="day.traintype[traintype.id]" >
@@ -26,9 +27,9 @@
         
 
        </a>
-      </ion-item>
-	</span>
 
+       <span class="day-offset" ng-if="getDayOffset(daygroup, $index) > 1"><i class="icon ion-battery-charging"></i> {{getDayOffset(daygroup, $index)}} päivää</span>
+      </ion-item>
     </ion-list>
 	
 

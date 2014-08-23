@@ -290,6 +290,9 @@ angular.module('treenit.services', [])
 		all: function() {
 			return treeni.all()
 		},
+		allGrouped: function(groupByTerm) {
+			return treeni.allGrouped(groupByTerm)
+		},
 		count: function() {
 			return treeni.count()
 		},
@@ -343,6 +346,12 @@ angular.module('treenit.services', [])
 		},
 		latestCountByDays: function(days) {
 			return treeni.getLatestCountByDays(days);
+		},
+		lastDaysActivity: function(days) {
+			return treeni.getLastDaysActivity(days);
+		},
+		trainTypes: function() {
+			return treeni.getTrainTypes();
 		},
 		setData: function(id,field,val){
 

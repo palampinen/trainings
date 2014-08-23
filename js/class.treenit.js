@@ -19,6 +19,24 @@ Treenit.prototype.all = function(){
 }
 
 
+// All trainings groped by field
+Treenit.prototype.allGrouped = function(groupbyTerm){
+    var all_data = _.sortBy(this.data, function(training){ return date2Date(training.date) }).reverse()
+    	result =  _.groupBy(all_data,groupbyTerm),
+    	resultArray=[];
+
+    // Obj to Array
+    for( var i in result ) {
+	    resultArray.push( {
+	    	date: i,
+	    	data: result[i]
+	    } )
+	}
+
+    return resultArray;
+}
+
+
 // Total trainings
 Treenit.prototype.count = function(){
     return this.data.length;
@@ -731,8 +749,65 @@ Treenit.prototype.getFirstVisit = function() {
 
 }
 
+//	last n days activity
+Treenit.prototype.getLastDaysActivity = function(days) {
 
-/* TEST BY JQUERY 
+	var weekCount = 0,
+		d = new Date(),
+		d2 = new Date(),
+		dates = [],
+		activity = [],
+		thisdata = _.sortBy(this.data, function(training){ return date2Date(training.date) }).reverse(),
+		i = 0,
+		j,
+		dayNames = this.getDayNames();
+
+	// Set Date parameter days ago
+	d.setDate(d.getDate() - days);
+
+	// Get the training dates in array
+	while( date2Date(this.data[i].date) >= d){
+		dates.push(date2Date(this.data[i].date).getTime())
+		i++
+	}
+
+	// Loop Days to get day names and date, combine with activity
+	for(j = 0; j<days;j++) {
+		activity.push(
+			{
+				'date' : d2.getDate(),
+				'name' : dayNames[d2.getDay()],
+				'active': dates.indexOf(new Date(d2.getFullYear(), d2.getMonth(), d2.getDate()).getTime()) >= 0,
+				'fullDate' : [d2.getDate(), d2.getMonth()+1,d2.getFullYear()].join('.')
+			}
+		)
+		d2.setDate(d2.getDate() - 1);
+	}
+
+	return activity;
+
+
+}
+
+Treenit.prototype.getDayNames = function() {
+	return ['su','ma','ti','ke','to','pe','la']
+}
+
+Treenit.prototype.getTrainTypes = function(){
+
+	return  [
+    { id: 0, name: 'Aerobinen', icon:'man329' },
+    { id: 1, name: 'Jalat', icon:'leg5' },
+    { id: 2, name: 'Selkä', icon:'back' },
+    { id: 3, name: 'Rinta', icon:'shirtfront' },
+    { id: 4, name: 'Kädet', icon:'bicep' },
+    //{ id: 5, name: 'Hauis', icon:'hand' },
+    //{ id: 6, name: 'Ojentaja', icon:'hand' },
+    { id: 5, name: 'Vatsa', icon:'abdominals' }
+    ]
+}
+
+/* TEST WITH JQUERY 
 $(function() {
 
 
