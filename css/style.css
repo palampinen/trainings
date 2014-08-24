@@ -205,14 +205,61 @@ background-color:transparent;
 #list_trainings .item a .trainicon { display:inline-block; width:28px; height:28px; margin:0px 5px 0 0; }
 #list_trainings .item .treenicon {float:left; background:#fff;color:#45CCBE; font-size:17px; border-radius:50%;display:inline-block; width:28px; height:28px; line-height:28px; text-align:center;  }
 
-#list_trainings .item .day-offset {color:rgba(255,255,255,.4); line-height:28px; font-size:70%; font-weight:400; display: inline-block; margin:0 auto; text-align: center;  top:55%;left:50%;margin-left:-30px;position:absolute;}
-#list_trainings .item .day-offset span.count {font-weight:500;color:rgba(255,255,255,.6);font-size:13px;line-height: 26px;}
-#list_trainings .item .day-offset .icon {font-size:22px; line-height:26px; float:left; margin: 0 3px 0 0; color:rgba(255,255,255,.6);/* border-radius:100%; border:1px solid rgba(255,255,255,.6); */width:30px;height:30px; }
+#list_trainings .item .day-offset { padding-right:20px; color:rgba(255,255,255,.4); line-height:28px; font-size:70%; font-weight:400; display: block; margin:0; text-align: right; width:100%; top:55%;left:0;position:absolute;}
+#list_trainings .item .day-offset span.count {font-weight:900;color:rgba(255,255,255,.8);font-size:13px;line-height: 26px;}
+#list_trainings .item .day-offset .icon {font-size:22px; line-height:26px; float:none; margin: 0 3px 0px 0; position:relative;top:2px;color:rgba(255,255,255,.6);/* border-radius:100%; border:1px solid rgba(255,255,255,.6); width:30px;height:30px;*/ }
+#list_trainings .item .day-offset:after {animation: animateline 4s; content:''; display:block; position: absolute;left:25px;height: 1px;width:100%;/*border-bottom:1px solid rgba(255,255,255,.1); */ box-shadow:0 0 6px rgba(255,255,255,0.3); background:linear-gradient(90deg, rgba(255,255,255,.2) 0%, rgba(255,255,255,.6) 100%);}
 
 #list_trainings .item.dot-2 a:before { width:11px; height:11px;left:19px;top:20px; }
 #list_trainings .item.dot-3 a:before { width:13px; height:13px;left:18px;top:19px; }
 #list_trainings .item.dot-4 a:before { width:15px; height:15px;left:17px;top:18px; }
 #list_trainings .item.dot-4 a:before { width:17px; height:17px;left:16px;top:17px; }
+
+/* EXPERIMENTAL: Animate day offset */
+#list_trainings .item .day-offset .text{
+    position:relative;
+    animation: animatetext 3s linear 1s ;
+    -webkit-animation: animatetext 3s linear 1s ;
+}
+#list_trainings .item .day-offset:after {
+    animation: animateline 3s; 
+    -webkit-animation: animateline 3s; 
+}
+
+
+#list_trainings .item:before{
+    animation: animateline2 5s; 
+    -webkit-animation: animateline2 5s; 
+
+}
+
+@keyframes animateline {
+    from {width:0;}
+    to {width:100%;}
+}
+@-webkit-keyframes animateline {
+    from {width:0;}
+    to {width:100%;}
+}
+
+@keyframes animatetext {
+    from {opacity:0;}
+    to {opacity:1;}
+}
+@-webkit-keyframes animatetext {
+    from {opacity:0;}
+    to {opacity:1;}
+}
+
+@keyframes animateline2 {
+    from {height:0;}
+    to {height:100%;}
+}
+
+@-webkit-keyframes animateline2 {
+    from {height:0;}
+    to {height:100%;}
+}
 
 
 /* List Months */
