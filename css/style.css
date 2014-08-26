@@ -228,8 +228,10 @@ background-color:transparent;
 
 
 #list_trainings .item:before{
+    
     animation: animateline2 5s; 
     -webkit-animation: animateline2 5s; 
+    
 
 }
 

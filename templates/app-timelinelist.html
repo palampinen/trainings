@@ -11,9 +11,9 @@
   </ion-nav-buttons>
 -->
 
- <ion-content class="has-header" >
+ <ion-content class="has-header" overflow-scroll="true">
    	<ion-list id="list_trainings">
-      <ion-item collection-repeat="daygroup in days" collection-item-width="'100%'" collection-item-height="getItemHeight(daygroup, $index)" ng-style="{height: getItemHeight(daygroup, $index)+'px'}" class="month item dot-{{daygroup.data.length}}" ng-class="{first: $index==0}">
+      <ion-item ng-repeat="daygroup in days" ng-style="{height: getItemHeight(daygroup, $index)+'px'}" class="month item dot-{{daygroup.data.length}}" ng-class="{first: $index==0}">
 			 <a ng-repeat="day in daygroup.data" ng-href="#/app/timeline/{{day.date}}"><span ng-if="$index<=0" >{{day.date}}</span> 
 
 <span class="trainicons">

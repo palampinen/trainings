@@ -431,11 +431,11 @@ angular.module('treenit.controllers', [])
 .controller('TimelineListCtrl', function($scope, Treenidata) {
   
  // var days = Treenidata.all();
-  $scope.days = Treenidata.allGrouped('date');
-  console.log($scope.days)
-  
-  $scope.traintypes = Treenidata.trainTypes();
+  $scope.days = Treenidata.allGrouped('date').slice(0, 50);
 
+
+
+  $scope.traintypes = Treenidata.trainTypes();
 
   
   $scope.getItemHeight = function(item,index){
