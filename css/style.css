@@ -194,7 +194,9 @@ background-color:transparent;
 #list_days .month h2.count img{height: 24px; float: left; margin:0 5px 0;}
 #list_days .month h2.count.badge {padding:4px 10px 4px 5px; font-size:16px; line-height:24px; position:relative;top:auto;left:auto; right:auto; margin-top:-2px;}
 
-#list_trainings .item:before{display:block;content:""; width:1px; height:100%; min-height:101px; background:rgba(255,255,255,.4); background:linear-gradient(180deg, rgba(255,255,255,.2) 0%, rgba(255,255,255,.5) 20px, rgba(255,255,255,.2) 100%); position:absolute; left:24px;top:0; box-shadow:0 0 6px rgba(255,255,255,0.5);}
+/*#list_trainings .item:before{display:block;content:""; width:1px; height:100%; min-height:101px; background:rgba(255,255,255,.4); background:linear-gradient(180deg, rgba(255,255,255,.2) 0%, rgba(255,255,255,.5) 20px, rgba(255,255,255,.2) 100%); position:absolute; left:24px;top:0; box-shadow:0 0 6px rgba(255,255,255,0.5);}
+*/
+#list_trainings .timelining {display:block; width:1px; height:100%; min-height:101px; background:rgba(255,255,255,.4); background:linear-gradient(180deg, rgba(255,255,255,.2) 0%, rgba(255,255,255,.5) 20px, rgba(255,255,255,.2) 100%); position:absolute; left:24px;top:0; box-shadow:0 0 6px rgba(255,255,255,0.5);}
 #list_trainings .item {border-color:rgba(255,255,255,.1);background:transparent;border-width:0 0 0 0;margin:0; padding-left:50px; width:100%;height:100%;}
 #list_trainings .item.first:before {top:25px;}
 #list_trainings .item a {display:block; text-decoration:none; font-family:Lato; color:#FFF;font-weight:300;font-size:120%;text-transform:uppercase; margin-bottom: 25px; clear:both;}
@@ -208,7 +210,8 @@ background-color:transparent;
 #list_trainings .item .day-offset { padding-right:20px; color:rgba(255,255,255,.4); line-height:28px; font-size:70%; font-weight:400; display: block; margin:0; text-align: right; width:100%; top:55%;left:0;position:absolute;}
 #list_trainings .item .day-offset span.count {font-weight:900;color:rgba(255,255,255,.8);font-size:13px;line-height: 26px;}
 #list_trainings .item .day-offset .icon {font-size:22px; line-height:26px; float:none; margin: 0 3px 0px 0; position:relative;top:2px;color:rgba(255,255,255,.6);/* border-radius:100%; border:1px solid rgba(255,255,255,.6); width:30px;height:30px;*/ }
-#list_trainings .item .day-offset:after {animation: animateline 4s; content:''; display:block; position: absolute;left:25px;height: 1px;width:100%;/*border-bottom:1px solid rgba(255,255,255,.1); */ box-shadow:0 0 6px rgba(255,255,255,0.3); background:linear-gradient(90deg, rgba(255,255,255,.2) 0%, rgba(255,255,255,.6) 100%);}
+/*#list_trainings .item .day-offset:after,*/
+#list_trainings .item .day-offset .lining {animation: animateline 4s; content:''; display:block; position: absolute;left:25px;height: 1px;width:100%;/*border-bottom:1px solid rgba(255,255,255,.1); */ box-shadow:0 0 6px rgba(255,255,255,0.3); background:linear-gradient(90deg, rgba(255,255,255,.2) 0%, rgba(255,255,255,.6) 100%);}
 
 #list_trainings .item.dot-2 a:before { width:11px; height:11px;left:19px;top:20px; }
 #list_trainings .item.dot-3 a:before { width:13px; height:13px;left:18px;top:19px; }
@@ -221,16 +224,25 @@ background-color:transparent;
     animation: animatetext 3s linear 1s ;
     -webkit-animation: animatetext 3s linear 1s ;
 }
-#list_trainings .item .day-offset:after {
+/*#list_trainings .item .day-offset:after,*/
+#list_trainings .item .day-offset .lining
+{
+/*
     animation: animateline 3s; 
     -webkit-animation: animateline 3s; 
+  */ 
+  width:0;
 }
 
 
-#list_trainings .item:before{
+
+
+#list_trainings .item:before,
+#list_trainings .timelining{
     
-    animation: animateline2 5s; 
-    -webkit-animation: animateline2 5s; 
+    animation: animateline2 50s; 
+    -webkit-animation: animateline2 50s;
+    height: 0;
     
 
 }

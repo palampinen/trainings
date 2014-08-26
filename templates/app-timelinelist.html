@@ -13,7 +13,10 @@
 
  <ion-content class="has-header" overflow-scroll="true">
    	<ion-list id="list_trainings">
+      <span class="timelining" ></span>
       <ion-item ng-repeat="daygroup in days" ng-style="{height: getItemHeight(daygroup, $index)+'px'}" class="month item dot-{{daygroup.data.length}}" ng-class="{first: $index==0}">
+
+       
 			 <a ng-repeat="day in daygroup.data" ng-href="#/app/timeline/{{day.date}}"><span ng-if="$index<=0" >{{day.date}}</span> 
 
 <span class="trainicons">
@@ -28,7 +31,9 @@
 
        </a>
 
-       <span class="day-offset" ng-if="getDayOffset(daygroup, $index) >= 1"><span class="text"> <i class="icon ion-ios7-clock-outline"></i> <span class="count">{{getDayOffset(daygroup, $index)}}</span> pv taukoa</span></span>
+       <span class="day-offset" ng-if="getDayOffset(daygroup, $index) >= 1"><span class="text"> <i class="icon ion-ios7-clock-outline"></i> <span class="count">{{getDayOffset(daygroup, $index)}}</span> pv taukoa</span>
+       <span class="lining" ng-style="{'animation': 'animateline 2s '+($index*2)+'s', '-webkit-animation': 'animateline 2s '+($index*0.25)+'s'}"></span>
+      </span>
       </ion-item>
     </ion-list>
 	
