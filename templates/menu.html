@@ -19,7 +19,7 @@
         </ion-item>
       -->
         <ion-item nav-clear menu-close href="#/app/dash">
-           <i class="icon ion-ios7-speedometer-outline"></i> Treenit
+           <i class="icon ion-ios7-speedometer-outline"></i> Treenit 
         </ion-item>
       <!--
         <ion-item nav-clear menu-close href="#/app/playlists">
@@ -31,7 +31,7 @@
         </ion-item>
       -->
         <ion-item nav-clear menu-close href="#/app/months">
-           <i class="icon ion-ios7-star"></i> Kuukausi <span class="badge badge-assertive">new</span>
+           <i class="icon ion-ios7-calendar-outline"></i> Kuukausi
         </ion-item>
 
 
@@ -45,12 +45,17 @@
         </ion-item>
 
         <ion-item nav-clear menu-close href="#/app/intro">
-           <i class="icon ion-ios7-reload"></i> Lataa
+           <i class="icon ion-ios7-person"></i> Kirjaudu
         </ion-item>
 
-
+        <!--
         <ion-item nav-clear menu-close href="#/app/browse">
            <i class="icon ion-code"></i> Debug
+        </ion-item>-->
+
+        <ion-item nav-clear menu-close style="margin-top:20px">
+
+           <i class="icon ion-back"></i>Viime treenistä <span class="badge new-trainings" ng-class="{'badge-assertive':lastvisit>=8, 'badge-energized':(lastvisit>=4 && lastvisit<7), 'badge-calm': (lastvisit>=2 && lastvisit<4), 'badge-positive': lastvisit<2}">{{lastvisit}} pv</span>
         </ion-item>
       </ion-list>
     </ion-content>

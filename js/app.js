@@ -34,7 +34,7 @@ angular.module('treenit', ['ionic', 'treenit.controllers', 'treenit.services'])
       //console.log(data);  
     }, function(data) {
       // call returned an error
-      alert('Yhteysongelma');
+      alert('Tarkista nettiyhteys');
     });
   }
 

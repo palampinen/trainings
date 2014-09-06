@@ -1,9 +1,10 @@
 angular.module('treenit.controllers', [])
 
-.controller('AppCtrl', function($scope, $state, $ionicModal, $timeout, AppAuth, Trainings, User) {
+.controller('AppCtrl', function($scope, $state, $ionicModal, $timeout, AppAuth, Treenidata, User) {
   
 
   $scope.currentuser = User.all();
+  $scope.lastvisit = Treenidata.lastvisit();
 
 
 
@@ -123,11 +124,13 @@ angular.module('treenit.controllers', [])
     //$state.go('app.dash');
     
   };
+
   
   if( User.isAuthed()){
     startApp();
     return;
   }
+  
   
   
   $scope.user = User.all();
@@ -161,7 +164,9 @@ angular.module('treenit.controllers', [])
 
       });
     }
+    
   }
+
   
 
 })

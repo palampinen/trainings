@@ -16,7 +16,7 @@ html, body, h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6, button, input,
 .menu {background:#000 url(../img/loadman/new_dark.jpg) no-repeat 100% 100%; background-size:100% auto;} 
 .menu .scroll{margin-top:10px;} 
 .menu .title {text-align:left; font-weight:300;text-transform:uppercase;}
-.menu .title span{display:inline-block;margin-right:15px;width:30px; height:30px; line-height:30px;text-align:center; border-radius:100%;background:rgba(255,255,255,.2);}
+.menu .title span{display:inline-block;margin-right:15px;width:30px; height:30px; line-height:30px;text-align:center; -webkit-border-radius:100%; border-radius:100%;background:rgba(255,255,255,.2);}
 .menu .item, .menu .item-complex  .item-content {border:none;background:transparent;color:#bbb;}
 .menu .item a {color:#bbb;}
 .menu .item:active, .menu .item:hover, .menu .item:focus, .menu .item.activated,
@@ -24,7 +24,7 @@ html, body, h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6, button, input,
 .menu .item a > .icon {color:#fff;font-size:120%;margin-right:10px; width:20px; display:inline-block; text-align:center;text-shadow:0 0 10px #eee; }
 .menu .item .iconimg {width:20px;float:left;margin:2px 15px 0 0;}
 .menu .bar-header {background:#111; border-color:#111;font-size:120%;}
-
+.menu .new-trainings {font-weight: 900;}
 
 /* Background-images */
 .bg-black { display:block; height:100%;
@@ -45,11 +45,16 @@ html, body, h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6, button, input,
 .bar.bar-light.bar-header {border:0 !important; box-shadow:none !important; -webkit-box-shadow:none !important;}
 */
 /* transparent navbar */
-.bar-light .button.button-clear, .bar-light,.bar-light .button {color:#FFF; padding-top:4px;border-radius:0;}
+.bar-light .button.button-clear, .bar-light,.bar-light .button {color:#FFF; padding-top:4px;border-radius:0; -webkit-border-radius:0;}
 .bar.bar-light .title {color:#FFF; font-weight:300; font-size:18px; text-transform:uppercase;}
 .bar.bar-light.bar-header {background-image:none; background:transparent !important; border:0 !important;border-color:transparent; box-shadow:none !important; -webkit-box-shadow:none !important;}
 
 
+/* Intro */
+.fadeform .item-input {border-color:#FFF;background: rgba(255,255,255,.05);margin-bottom: 5px; color:#FFF;border-color:#FFF;border-radius: 3px;-webkit-border-radius: 3px;}
+.fadeform .item-input input, .fadeform .item-select select, .fadeform .input-label, .fadeform .item-select:after {color:#FFF;}
+.fadeform .item-select select option {color: #000;}
+.bigbtn, .button.bigbtn {color:#45CCBE;font-weight: 300; text-transform: uppercase;border:none;}
 
 /* Gauge */
 .center {text-align:center;}
@@ -67,7 +72,7 @@ background-color:transparent;
 .gaugeWrap .title { position:relative; color:#fff;}
 .gaugeWrap.big .title {font-size:40px; line-height:40px; margin-top:0px; font-family:'Lato',Roboto,Helvetica Neue, Helvetica, Arial;font-weight:300;}
 .gaugeWrap.big .title img{height: 20px; float: left; margin: 10px 0 0 10px;}
-.gauge-circle {margin:0 auto;border-radius:50%; position:relative;}
+.gauge-circle {margin:0 auto;border-radius:100%;-webkit-border-radius:100%;position:relative;}
 
 .dashwrap {padding:30px 0 10px;position:relative;}
 .bigchart {margin:0px auto 0px; display:block;}
@@ -124,7 +129,7 @@ background-color:transparent;
 #chart_div { font-family:'Lato','Roboto','Helvetica',Arial; position:relative; text-transform:uppercase;}
 .canvasjs-chart-tooltip > div {padding:8px !important; opacity:0.8;background:#4BBDC3 !important;}
 .canvasjs-chart-tooltip,  .canvasjs-chart-tooltip > div{box-shadow:none !important;color:#FFF !important; border:0 !important;  font-family:'Lato' !important; font-style:normal !important; text-shadow:none !important; border-radius:0 !important;}
-.canvasjs-chart-tooltip{border:1px solid rgba(255,255,255,.7) !important; padding-left:30px !important; padding-right:30px !important; border-radius:30px !important;background:#4BBDC3 !important;opacity:0.89;}
+.canvasjs-chart-tooltip{border:1px solid rgba(255,255,255,.7) !important; padding-left:30px !important; padding-right:30px !important; border-radius:30px !important; -webkit-border-radius:30px !important;background:#4BBDC3 !important;opacity:0.89;}
 .canvasjs-chart-credit {display:none !important;}
 
 .bignumbrow {padding:0; background: #45CCBE;}
@@ -170,6 +175,7 @@ background-color:transparent;
 #list_days span > a {
     background: none repeat scroll 0 0 transparent;
     border-radius: 100%;
+    -webkit-border-radius: 100%;
     color: rgba(255,255,255,.7);
     display: block;
 	margin:0 auto;
@@ -207,7 +213,7 @@ background-color:transparent;
 
 #list_trainings .item a .trainicons {float:right;margin-top:-6px;}
 #list_trainings .item a .trainicon { display:inline-block; width:28px; height:28px; margin:0px 5px 0 0; }
-#list_trainings .item .treenicon {float:left; background:#fff;color:#45CCBE; font-size:17px; border-radius:50%;display:inline-block; width:28px; height:28px; line-height:28px; text-align:center;  }
+#list_trainings .item .treenicon {float:left; background:#fff;color:#45CCBE; font-size:17px; border-radius:50%;-webkit-border-radius:50%;display:inline-block; width:28px; height:28px; line-height:28px; text-align:center;  }
 
 #list_trainings .item .day-offset { padding-right:20px; color:rgba(255,255,255,.4); line-height:28px; font-size:70%; font-weight:400; display: block; margin:0; text-align: right; width:100%; top:55%;left:0;position:absolute;}
 #list_trainings .item .day-offset span.count {font-weight:900;color:rgba(255,255,255,.8);font-size:13px;line-height: 26px;}
@@ -308,7 +314,7 @@ background-color:transparent;
 .treeni h2 img {height:20px;margin:0 5px 0 0;}
 .treeni .num{font-family:Lato; font-size:25px;text-align:center;color:#EEE;}
 .treeni {color:#EEE; margin:15px 0 ; padding:15px 0; border-bottom:1px solid rgba(255,255,255,.2);clear:both;}
-.datecircle {margin: 20px auto 10px; color: #45CCBE; background: #FFF; line-height:110px; display: block; border-radius: 50%; font-family: Lato; text-align: center; height: 110px; width: 110px; font-size: 18px;}
+.datecircle {margin: 20px auto 10px; color: #45CCBE; background: #FFF; line-height:110px; display: block; border-radius: 50%; -webkit-border-radius:50%;font-family: Lato; text-align: center; height: 110px; width: 110px; font-size: 18px;}
 
 
 
@@ -322,7 +328,7 @@ background-color:transparent;
 	background-color:transparent; border-color:rgba(0,0,0,.02);
 	line-height:34px;
 }
-.traintypes .item .treenicon {float:left; background:rgba(255,255,255,.85);color:#45CCBE;color:#aaa; font-size:25px; border-radius:50%;display:inline-block; width:34px; height:34px; line-height:34px; text-align:center;  margin-right:20px;}
+.traintypes .item .treenicon {float:left; background:rgba(255,255,255,.85);color:#45CCBE;color:#aaa; font-size:25px; border-radius:50%;-webkit-border-radius:50%;display:inline-block; width:34px; height:34px; line-height:34px; text-align:center;  margin-right:20px;}
 .traintypes .item .treenicon.flaticon-abdominals, .traintypes .item .treenicon.flaticon-gymnast41 {font-size:32px;}
 
 .traintypes .item .toggle .track {border-color:rgba(255,255,255,.03);background:rgba(255,255,255,.3);}
