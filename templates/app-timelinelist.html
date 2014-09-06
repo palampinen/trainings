@@ -14,6 +14,7 @@
  <ion-content class="has-header" overflow-scroll="true">
    	<ion-list id="list_trainings">
       <span class="timelining" ></span>
+      <!--collection-repeat="daygroup in days" collection-item-width="'100%'" collection-item-height="getItemHeight(daygroup, $index)"-->
       <ion-item ng-repeat="daygroup in days" ng-style="{height: getItemHeight(daygroup, $index)+'px'}" class="month item dot-{{daygroup.data.length}}" ng-class="{first: $index==0}">
 
        

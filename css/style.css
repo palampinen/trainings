@@ -28,6 +28,8 @@ html, body, h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6, button, input,
 
 /* Background-images */
 .bg-black { display:block; height:100%;
+    background: #45CCBE;
+    background: -webkit-gradient(linear, left top, right bottom, color-stop(0%,#45CCBE), color-stop(50%,#45CCBE), color-stop(100%,#5E8CD6));
     background:-ms-linear-gradient(135deg, #45CCBE 0%,#45CCBE 33%,#5E8CD6 100%);
     background:-webkit-linear-gradient(135deg, #45CCBE 0%,#45CCBE 33%,#5E8CD6 100%);
     background:linear-gradient(135deg, #45CCBE 0%,#45CCBE 33%,#5E8CD6 100%);
