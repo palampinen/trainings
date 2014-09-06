@@ -49,7 +49,7 @@ Treenit.prototype.count = function(){
 */
 Treenit.prototype.getTimeFromLastVisit = function(){
 
-	if(!this.data) return -1;
+	if(!this.data || _.isEmpty(this.data)) return '';
 	
 	return days_between( new Date(), date2Date(this.data[0].date));
 }
@@ -751,6 +751,8 @@ Treenit.prototype.getFirstVisit = function() {
 
 //	last n days activity
 Treenit.prototype.getLastDaysActivity = function(days) {
+	if(!this.data || _.isEmpty(this.data))
+		return '';
 
 	var weekCount = 0,
 		d = new Date(),

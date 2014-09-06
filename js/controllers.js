@@ -104,12 +104,12 @@ angular.module('treenit.controllers', [])
     window.localStorage['didIntro'] = true;
     
     // Disable back
-    /*
+    
     $ionicViewService.nextViewOptions({
       disableAnimate: true,
       disableBack: true
     }); 
-    */
+    
     
     Trainings.all()
     .then(function(data) {
