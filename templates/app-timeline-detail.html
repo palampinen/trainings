@@ -34,7 +34,7 @@
 			<li ng-repeat="traintype in traintypes" ng-class="{active: treeni.traintype[traintype.id]}" class="item item-toggle">
 				 <i class="treenicon flaticon-{{traintype.icon}}"></i>
 				 {{traintype.name}}
-				 <label class="toggle"  ng-click="$active.$index=!$active.$index; updateTrainType(treeni.id,traintype.id,$active.$index)">
+				 <label class="toggle" ng-click="$active.$index=!$active.$index; updateTrainType(treeni.id,traintype.id,$active.$index)">
 				   <input type="checkbox" ng-model="treeni.traintype[traintype.id]" >
 				   <div class="track" >
 					 <div class="handle"></div>
