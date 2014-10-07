@@ -9,7 +9,6 @@ Lazy Electric Blue: #5E8CD6
 html, body, h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6, button, input,select,option,textarea  {font-family:'Lato','Montserrat',Roboto,Helvetica Neue, Helvetica, Arial;}
 
 
-
 /* Sidenav */
 /*.item-complex .item-content, .item-radio .item-content {background-color:#000;color:#bbb;}
 .item {background-color:#000;border-color:#111; color:#bbb;}*/
@@ -45,8 +44,9 @@ html, body, h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6, button, input,
 .bar.bar-light.bar-header {border:0 !important; box-shadow:none !important; -webkit-box-shadow:none !important;}
 */
 /* transparent navbar */
-.bar-light .button.button-clear, .bar-light,.bar-light .button {color:#FFF; padding-top:4px;border-radius:0; -webkit-border-radius:0;}
+.bar-light .button.button-clear, .bar-light,.bar-light .button {color:#FFF; padding-top:3px;border-radius:0; -webkit-border-radius:0;}
 .bar.bar-light .title {color:#FFF; font-weight:300; font-size:18px; text-transform:uppercase;}
+.bar.bar-light .title + .buttons .button {padding-top:0;}
 .bar.bar-light.bar-header {background-image:none; background:transparent !important; border:0 !important;border-color:transparent; box-shadow:none !important; -webkit-box-shadow:none !important;}
 
 
@@ -111,9 +111,10 @@ background-color:transparent;
 }
 
 /* Weeklist */
-#week-list-title{color:rgba(255,255,255,.8);font-weight:300; margin:0px 10px 0 0; padding:0; text-align:right;}
+#week-list-title{color:rgba(255,255,255,.9);font-weight:300; margin:0px 10px 0 0; padding:0; text-align:right;}
+
 .week-list{margin:0 -6px 0px; padding-bottom:0; width:auto;}
-.week-list .col {text-align:center;color:rgba(255,255,255,.8); text-decoration:none;padding-bottom:10px;border-style: solid; border-color:rgba(255,255,255,.2); border-width:1px 1px 1px 0; background:transparent; font-size:10px;line-height:12px;padding-top:30px;}
+.week-list .col {text-align:center;color:rgba(255,255,255,.8); text-decoration:none;padding-bottom:10px;border-style: solid; border-color:rgba(255,255,255,.2); border-width:1px 1px 0px 0; background:transparent; font-size:10px;line-height:12px;padding-top:30px;}
 
 .week-list .col > span {display:block; text-transform:uppercase; font-weight:900;}
 .week-list .col .icon{font-size:30px;}
@@ -310,35 +311,60 @@ background-color:transparent;
 
 /* Detail Date Page */
 .datepage .nav-bar.bar .title {font-family:Lato;}
-.treeni h2 {color:#fff;font-size:23px; margin:0 auto 10px; font-weight:100; font-family:Lato; text-align:center; text-transform:uppercase;}
+.treeni h2 {color:#fff;font-size:24px; margin:0 auto 10px; font-weight:300; font-family:Lato; text-align:center; text-transform:uppercase;}
 .treeni h2 img {height:20px;margin:0 5px 0 0;}
 .treeni .num{font-family:Lato; font-size:25px;text-align:center;color:#EEE;}
-.treeni {color:#EEE; margin:15px 0 ; padding:15px 0; border-bottom:1px solid rgba(255,255,255,.2);clear:both;}
-.datecircle {margin: 20px auto 10px; color: #45CCBE; background: #FFF; line-height:110px; display: block; border-radius: 50%; -webkit-border-radius:50%;font-family: Lato; text-align: center; height: 110px; width: 110px; font-size: 18px;}
+.treeni {color:#EEE; margin:15px 0 ; padding:15px 0; /*border-bottom:1px solid rgba(255,255,255,.2);*/clear:both;}
+.treeni.single {margin:0;padding:0;}
+.datecircle {margin: 15px auto 5px; color: #45CCBE; background: #fff;text-transform: uppercase; line-height:30px;padding:13px 0px 0; display: block; border-radius: 50%; -webkit-border-radius:50%;font-family: Lato; text-align: center; height: 124px; width: 124px; font-size: 18px;}
+.datecircle .dayName {font-size:12px;}
+.datecircle .dayNumber {font-size: 200%; font-weight: 300;display: block;margin:2px 0 0;}
 
 
 
+
+.traintypes  {margin-bottom: 0;}
 .traintypes .item {
-
+    /*
 	background-repeat: no-repeat;
 	background-size: auto 30px;
 	background-position: 10px 50%;
-	font-size:125%;font-weight:300; text-transform:uppercase;
-	color:rgba(50, 80, 90, 0.85);
-	background-color:transparent; border-color:rgba(0,0,0,.02);
-	line-height:38px;
+    */
+    font-size:125%;font-weight:300; text-transform:uppercase;
+    color:rgba(50, 80, 90, 0.85);
+    background-color:transparent; 
+    border-color:rgba(0,0,0,.03);
+    padding:8px 15px;
+	line-height:40px;
+    border-width: 1px 0;
 }
-.traintypes .item .treenicon {float:left; background:transparent;border:1px solid rgba(50, 80, 90, 0.85);;color:rgba(50, 80, 90, 0.85); font-size:18px; border-radius:50%;-webkit-border-radius:50%;display:inline-block; width:40px; height:40px; line-height:38px; text-align:center;  margin-right:15px;}
+.traintypes .item-radio .radio-icon{font-size: 32px;padding:8px 15px; visibility: visible}
+.traintypes .item-radio .radio-icon.unactive{color:rgba(0,0,0,.2)}
+.traintypes .item .treenicon, .trained .treenicon {float:left; background:transparent;border:1px solid rgba(50, 80, 90, 0.85);color:rgba(50, 80, 90, 0.85); font-size:18px; border-radius:50%;-webkit-border-radius:50%;display:inline-block; width:40px; height:40px; line-height:38px; text-align:center;  margin-right:15px;}
 .traintypes .item .treenicon.flaticon-abdominals, .traintypes .item .treenicon.flaticon-gymnast41 {font-size:26px;}
-
 .traintypes .item .toggle .track {border-color:rgba(255,255,255,.03);background:rgba(255,255,255,.3);}
 .traintypes .toggle input:checked + .track {border-color:rgba(0,0,0,.03);background:rgba(0,0,0,.3);}
-
-.traintypes .item.active .treenicon {color:rgba(255,255,255,0.9); border-color:rgba(255,255,255,0.9);}
-
+.traintypes .item.active .treenicon, .trained .treenicon {color:rgba(255,255,255,0.9); border-color:rgba(255,255,255,0.9);}
 .traintypes .item.active {color:rgba(255,255,255,0.9);background-color:transparent;}
 .traintypes .item-toggle .toggle {top:17.5px;}
 
+.trained {text-decoration: none;display:block; border-bottom: 2px solid rgba(0,0,0,.1);min-height:55px; position:relative;padding:3px;}
+.trained:before, .trained:after{display:block; content:""; position: absolute;left:0;bottom:0;height:4px; width: 2px; background: rgba(0,0,0,.1); }
+.trained:after {left:auto;right:0; }
+.trained .treenicon  {margin:3px;float:none;}
+.trained .plus {opacity:0.5;text-decoration: none;float:right;}
+.trained:active .plus, .trained:focus .plus {color:#FFF;}
+.trained:active, .trained:focus, .trained:hover{border-color:rgba(255,255,255,.3);}
+.trained:active:before, .trained:focus:before, .trained:hover:before,
+.trained:active:after, .trained:focus:after, .trained:hover:after{background:rgba(255,255,255,.3);}
+
+.train-text-wrap {background: transparent;border:0;border-radius:0;}
+.list.train-text-wrap{border-bottom:1px solid rgba(0,0,0,.1) ;margin:0;}
+.train-text-wrap  .placeholder-icon{color:rgba(255,255,255,.7);font-size: 30px;padding-right: 12px;}
+.train-text{color:#FFF;border-color:rgba(255,255,255,.3);}
+.train-text-edit {color:#FFF;border-color:rgba(255,255,255,.3);border-width: 0 0 1px;border-top:solid;}
+.train-text-edit::-webkit-input-placeholder, .train-tex-editt[placeholder] { color:rgba(255,255,255,.1) }
+.train-text:active, .train-text:focus {}
 
 .button.button-light.button-outline {color:#FFF; border-color:#FFF;}
 .button.button-light.button-outline.activated {background:rgba(255,255,255,.3);}

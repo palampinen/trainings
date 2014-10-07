@@ -1,53 +1,69 @@
 <ion-view title="Päivä" >
 
+<ion-nav-buttons side="right">
+	<!-- <button ng-click="" class="button button-icon icon ion-compose"></button>-->
+	<button ng-click="addTraining('kuntosali')" class="button button-icon icon ion-ios7-plus-empty"></button>  
+</ion-nav-buttons>
 
-  <ion-nav-buttons side="right">
-   <!-- <button ng-click="" class="button button-icon icon ion-compose"></button>-->
-    <button ng-click="addTraining('kuntosali')" class="button button-icon icon ion-ios7-plus-empty"></button>  
-  </ion-nav-buttons>
+<ion-content class="has-header" overflow-scroll="true" padding="true">
 
 
-  <ion-content class="has-header" overflow-scroll="true" >
-
-		
-    <div class="datecircle"> {{date}}</div>
+	<div class="datecircle" > 
+		{{day.monthName}}
+		<span class="dayNumber">{{day.dayNumber}}</span>
+		<span class="dayName">{{day.dayName}}</span>
+	</div>
 
 	<div class="treeni" ng-repeat="treeni in treenit">
-	
-		
-		
-		<h2>{{treeni.hourtype}} <a ng-show="treeni.manual" ng-click="removeTraining(treeni.id)" class="trash"><i class="icon ion-ios7-trash"></i></a></h2>
-		
-		<div class="clearfix"></div>
-		
-		
-		<h3 class="num" ng-show="{{treeni.duration}}"><i class="ion-ios7-timer-outline"></i> {{treeni.duration[0]}}h {{treeni.duration[1]}}min</h3>
-		
-		<!--
-		<label class="item item-input" style="background:transparent;  border-width:0;">
-			<input style="background:transparent; border-width:0 0 1px;" type="text" placeholder="Tietoja treenistä">
-		</label>
-		-->
-		
-		<ul class="list traintypes">
 
+		<h2>{{treeni.hourtype}} <a ng-show="treeni.manual" ng-click="removeTraining(treeni.id)" class="trash"><i class="icon ion-ios7-trash"></i></a></h2>
+		<div class="clearfix"></div>
+		<h3 class="num" ng-show="{{treeni.duration}}"><i class="ion-ios7-timer-outline"></i> {{treeni.duration[0]}}h {{treeni.duration[1]}}min</h3>
+
+
+	
+
+	
+	<!--
+		<ul class="list traintypes">
 			<li ng-repeat="traintype in traintypes" ng-class="{active: treeni.traintype[traintype.id]}" class="item item-toggle">
-				 <i class="treenicon flaticon-{{traintype.icon}}"></i>
-				 {{traintype.name}}
-				 <label class="toggle" ng-click="$active.$index=!$active.$index; updateTrainType(treeni.id,traintype.id,$active.$index)">
-				   <input type="checkbox" ng-model="treeni.traintype[traintype.id]" >
-				   <div class="track" >
-					 <div class="handle"></div>
-				   </div>
-				 </label>
+				<i class="treenicon flaticon-{{traintype.icon}}"></i>
+				{{traintype.name}}
+				<label class="toggle" ng-click="$active.$index=!$active.$index; updateTrainType(treeni.id,traintype.id,$active.$index)">
+					<input type="checkbox" ng-model="treeni.traintype[traintype.id]" >
+					<div class="track" >
+						<div class="handle"></div>
+					</div>
+				</label>
 			</li>
 		</ul>
-		
-		
-		<div class="clearfix"></div>
+	-->
+		<a class="trained" href="#/app/timeline/{{date}}/{{$index}}" >
+			<i ng-repeat="traintype in traintypes" ng-show="treeni.traintype[traintype.id]" class="treenicon flaticon-{{traintype.icon}}"></i>
+
+			<i class="treenicon plus">+</i>
+		</a>
+
+		<div ng-show="false" class="list traintypes">
+			<label  ng-repeat="traintype in traintypes" ng-class="{active: treeni.traintype[traintype.id]}" class="item item-radio togglecheck" ng-click="$active.$index=!$active.$index; updateTrainType(treeni.id,traintype.id,$active.$index)">
+				<i class="treenicon flaticon-{{traintype.icon}}"></i>
+				{{traintype.name}}
+					<input type="checkbox" ng-model="treeni.traintype[traintype.id]" >
+				
+				<i class="radio-icon" ng-class="{'ion-ios7-circle-outline unactive':!treeni.traintype[traintype.id],'ion-ios7-checkmark':treeni.traintype[traintype.id]}"></i>
+			</label>
+		</div>
+
+		<div class="list list-inset train-text-wrap">
+		  <label class="item item-input train-text-wrap">
+		    <i class="icon ion-ios7-compose placeholder-icon"></i>
+		    <textarea class="train-text-edit" ng-change="updateText(treeni)" ng-model="treeni.text" style="background:transparent; border-width:0 0 1px;" placeholder="Tietoja treenistä"></textarea>
+		  </label>
+		</div>
 
 	</div>
-	<div ng-show="!future">
+
+	<div ng-if="!future && false">
 		<button ng-click="showBtns=!showBtns" class="button button-large button-outline button-light icon-left ion-ios7-plus-empty treenibtn addtreeni">Lisää treeni</button>
 
 		<div ng-show="showBtns" class="center buttonset">
@@ -56,5 +72,6 @@
 		</div>
 	</div>
 
-  </ion-content>
+
+</ion-content>
 </ion-view>

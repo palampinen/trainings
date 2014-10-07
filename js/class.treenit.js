@@ -994,3 +994,20 @@ var isFilled = function(need,traintypes,total) {
 	return false;
 
 }
+
+
+var getMonthName = function(date,fi) {
+	var months_fi = ['tammi','helmi','maalis','huhti','touko','kesä','heinä','elo','syys','loka','marras','joulu'],
+		months_en = [ "January", "February", "March", "April", "May", "June","July", "August", "September", "October", "November", "December" ];
+
+	return fi ? months_fi[date.getMonth()] : months_en[date.getMonth()];
+}
+
+
+var getWeekdayName = function(date,fi) {
+	var weekdays_fi = [ 'Sunnuntai','Maanantai','Tiistai','Keskiviikko','Tostai','Perjantai','Lauantai' ],
+		weekdays_en = [ 'Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday' ];
+
+	return fi ? weekdays_fi[date.getDay()] : weekdays_en[date.getDay()];
+
+}

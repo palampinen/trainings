@@ -174,7 +174,9 @@ angular.module('treenit.controllers', [])
 
 
 .controller('DashCtrl', function (Treenidata, $scope) {
-  
+
+
+
   var d = new Date();
   $scope.currentActivity = {};
   $scope.thisweek    = Treenidata.thisweek();
@@ -237,7 +239,7 @@ angular.module('treenit.controllers', [])
   var ctx = document.getElementById("dashChartWeek").getContext("2d"),
       activityChart = new Chart(ctx).Doughnut(ctxdata,options);
 
-
+  // toggle week/month pie chart
   $scope.updateChart = function(flag) {
     if(flag){
       activityChart.segments[0].value = $scope.thismonth;
@@ -252,7 +254,6 @@ angular.module('treenit.controllers', [])
       activityChart.update();
       $scope.currentActivity.num = $scope.thisweek;
       $scope.currentActivity.title = thisWeekTitle;
-
     }
 
   }
@@ -397,30 +398,35 @@ angular.module('treenit.controllers', [])
   
 })
   
-.controller('TimelineDetailCtrl', function($scope, $stateParams,Treenidata) {
+.controller('TimelineDetailCtrl', function($scope, $stateParams,Treenidata,$ionicNavBarDelegate) {
   
 
-  $scope.date = $stateParams.date;
-  $scope.treenit = Treenidata.trainingsOfDay($stateParams.date);
-  $scope.future = date2Date($scope.date) > new Date();
+    $scope.date = $stateParams.date;
+    $scope.treenit = Treenidata.trainingsOfDay($stateParams.date); // Get all trainings
+    if($stateParams.type)
+      $scope.treeni = $scope.treenit[parseInt($stateParams.type)]
+
+    var thisAsDate = date2Date($scope.date);
+    $scope.future = thisAsDate > new Date();          // is in future
+    $scope.day = {
+        dayName  : getWeekdayName(thisAsDate,true), // name of the day
+        monthName: getMonthName(thisAsDate,true),
+        dayNumber: thisAsDate.getDate()
+    }
+  
+  $scope.back = function(){
+    $ionicNavBarDelegate.back()
+  }
 
   $scope.updateTrainType = function(id,tid,val){ //id,tid,val
     Treenidata.setTrainTypeData(id,tid,val)
   }
+
+  $scope.updateText = function(treeni){
+    Treenidata.setData(treeni.id,'text',treeni.text)
+  }
   
-  var traintypes = [
-    { id: 0, name: 'Aerobinen', icon:'man329' },
-    { id: 1, name: 'Jalat', icon:'leg5' },
-    { id: 2, name: 'Selkä', icon:'back' },
-    { id: 3, name: 'Rinta', icon:'shirtfront' },
-    { id: 4, name: 'Kädet', icon:'bicep' },
-    //{ id: 5, name: 'Hauis', icon:'hand' },
-    //{ id: 6, name: 'Ojentaja', icon:'hand' },
-    { id: 5, name: 'Vatsa', icon:'abdominals' },
-    
-  ];
-  
-  $scope.traintypes = traintypes;
+  $scope.traintypes = Treenidata.trainTypes();
   
   $scope.addTraining = function(type){
     Treenidata.addTraining($scope.date,type);

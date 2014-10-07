@@ -1,0 +1,28 @@
+<ion-view title="Valitse" >
+
+<ion-nav-buttons side="right">
+	<button ng-click="back()" class="button button-icon icon ion-ios7-checkmark-outline"></button>  
+</ion-nav-buttons>
+
+<ion-content class="has-header" overflow-scroll="true" padding="true">
+
+	<div class="treeni single">
+
+		<div class="trained">
+
+			<i ng-repeat="traintype in traintypes" ng-show="treeni.traintype[traintype.id]" class="treenicon flaticon-{{traintype.icon}}"></i>
+		</div>
+
+		<div class="list traintypes">
+			<label ng-repeat="traintype in traintypes" ng-class="{active: treeni.traintype[traintype.id]}" class="item item-radio togglecheck" ng-click="$active.$index=!$active.$index; updateTrainType(treeni.id,traintype.id,$active.$index)">
+				<i class="treenicon flaticon-{{traintype.icon}}"></i>
+				{{traintype.name}}
+				<input type="checkbox" ng-model="treeni.traintype[traintype.id]" >
+				
+				<i class="radio-icon" ng-class="{'ion-ios7-circle-outline unactive':!treeni.traintype[traintype.id],'ion-ios7-checkmark':treeni.traintype[traintype.id]}"></i>
+			</label>
+		</div>
+	</div>
+
+</ion-content>
+</ion-view>
