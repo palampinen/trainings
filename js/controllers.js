@@ -398,7 +398,7 @@ angular.module('treenit.controllers', [])
   
 })
   
-.controller('TimelineDetailCtrl', function($scope, $stateParams,Treenidata,$ionicNavBarDelegate) {
+.controller('TimelineDetailCtrl', function($scope, $stateParams,Treenidata,$ionicNavBarDelegate,$timeout) {
   
 
     $scope.date = $stateParams.date;
@@ -437,6 +437,37 @@ angular.module('treenit.controllers', [])
     $scope.treenit = Treenidata.trainingsOfDay($stateParams.date)
   }
 
+  console.log($scope.treenit);
+  
+  $scope.updateEditor = function(x) {
+    var element = document.getElementById('ta_'+x);
+    if(element)
+      element.style.height = element.scrollHeight + "px";
+  };
+
+  $scope.updateEditorDelayed = function(x) {
+    $timeout(function() {
+      $scope.updateEditor(x);
+    })
+  }
+
+  $scope.focusTextarea = function(x){
+    $timeout(function() {
+      var el = document.getElementById('ta_'+x);
+      // focus...
+      el.focus()
+      
+      // ...to end of text
+       if (typeof el.selectionStart == "number") {
+          el.selectionStart = el.selectionEnd = el.value.length;
+      } else if (typeof el.createTextRange != "undefined") {
+          var range = el.createTextRange();
+          range.collapse(false);
+          range.select();
+      }
+    })
+  }
+  
 
 })
   
