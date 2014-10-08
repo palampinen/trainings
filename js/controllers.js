@@ -403,8 +403,8 @@ angular.module('treenit.controllers', [])
 
     $scope.date = $stateParams.date;
     $scope.treenit = Treenidata.trainingsOfDay($stateParams.date); // Get all trainings
-    if($stateParams.type)
-      $scope.treeni = $scope.treenit[parseInt($stateParams.type)]
+    if($stateParams.index)
+      $scope.treeni = $scope.treenit[parseInt($stateParams.index)]
 
     var thisAsDate = date2Date($scope.date);
     $scope.future = thisAsDate > new Date();          // is in future
@@ -467,7 +467,11 @@ angular.module('treenit.controllers', [])
       }
     })
   }
-  
+
+  if($stateParams.edit){
+      $scope.focusTextarea(0)
+      $scope.updateEditorDelayed(0);
+  }  
 
 })
   

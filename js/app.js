@@ -141,10 +141,20 @@ angular.module('treenit', ['ionic', 'treenit.controllers', 'treenit.services'])
     })
 
   .state('app.timeline-detail-type', {
-      url: '/timeline/:date/:type',
+      url: '/timeline/:date/:index',
       views: {
         'menuContent': {
           templateUrl: 'templates/app-timeline-detail-type.html',
+          controller: 'TimelineDetailCtrl'
+        }
+      }
+    })
+
+  .state('app.timeline-detail-text', {
+      url: '/timeline/:date/:index/:edit',
+      views: {
+        'menuContent': {
+          templateUrl: 'templates/app-timeline-detail-text.html',
           controller: 'TimelineDetailCtrl'
         }
       }

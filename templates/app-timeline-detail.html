@@ -54,13 +54,14 @@
 			</label>
 		</div>
 
-		
 
-		<div class="train-text" ng-show="!edit" ><span ng-if="!treeni.text" class="placeholder">Ei muistiinpanoja</span>{{treeni.text}}</div>
+		<div class="train-text"  ><span ng-if="!treeni.text" class="placeholder">Ei muistiinpanoja</span>{{treeni.text}}</div>
 
-		<textarea ng-show="edit" ng-keypress="updateEditor(treeni.id)" id="ta_{{treeni.id}}"  class="train-text-edit" ng-change="updateText(treeni)" ng-model="treeni.text" style="background:transparent; border-width:0 0 1px;" placeholder="Tietoja treenistä"></textarea>
-
-		<button class="button button-icon light icon placeholder-icon" ng-class="{'ion-ios7-compose':!edit,'ion-ios7-checkmark':edit}" ng-click="edit=!edit; updateEditorDelayed(treeni.id); focusTextarea(treeni.id)" ></button>
+		<a class="button button-icon light icon placeholder-icon ion-ios7-compose" href="#/app/timeline/{{date}}/{{$index}}/edit" ></a>
+		<!-- 
+		<textarea ng-show="edit" ng-keypress="updateEditor($index)" id="ta_{{$index}}"  class="train-text-edit" ng-change="updateText(treeni)" ng-model="treeni.text" style="background:transparent; border-width:0 0 1px;" placeholder="Tietoja treenistä"></textarea>
+		<button class="button button-icon light icon placeholder-icon" ng-class="{'ion-ios7-compose':!edit,'ion-ios7-checkmark':edit}" ng-click="edit=!edit; updateEditorDelayed(treeni.id); focusTextarea(treeni.id)" ></button> 
+		-->
 
 	</div>
 

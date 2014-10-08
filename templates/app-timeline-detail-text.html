@@ -1,0 +1,14 @@
+<ion-view title="Kirjoita" >
+
+<ion-nav-buttons side="right">
+	<button ng-click="back()" class="button button-icon icon ion-ios7-checkmark-outline"></button>  
+</ion-nav-buttons>
+
+<ion-content class="has-header" overflow-scroll="true" padding="true">
+
+	<div class="treeni single">
+		<textarea ng-keypress="updateEditor(0)" id="ta_0"  class="train-text-edit" ng-change="updateText(treeni)" ng-model="treeni.text" style="background:transparent; border-width:0 0 1px;" placeholder="Tietoja treenistä"></textarea>
+	</div>
+
+</ion-content>
+</ion-view>

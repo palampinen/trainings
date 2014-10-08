@@ -340,7 +340,7 @@ background-color:transparent;
 }
 .traintypes .item-radio .radio-icon{font-size: 32px;padding:8px 15px; visibility: visible}
 .traintypes .item-radio .radio-icon.unactive{color:rgba(0,0,0,.2)}
-.traintypes .item .treenicon, .trained .treenicon {float:left; background:transparent;border:1px solid rgba(50, 80, 90, 0.85);color:rgba(50, 80, 90, 0.85); font-size:18px; border-radius:50%;-webkit-border-radius:50%;display:inline-block; width:40px; height:40px; line-height:38px; text-align:center;  margin-right:15px;}
+.traintypes .item .treenicon, .trained .treenicon{float:left; background:transparent;border:1px solid rgba(50, 80, 90, 0.85);color:rgba(50, 80, 90, 0.85); font-size:18px; border-radius:50%;-webkit-border-radius:50%;display:inline-block; width:40px; height:40px; line-height:38px; text-align:center;  margin-right:15px;}
 .traintypes .item .treenicon.flaticon-abdominals, .traintypes .item .treenicon.flaticon-gymnast41 {font-size:26px;}
 .traintypes .item .toggle .track {border-color:rgba(255,255,255,.03);background:rgba(255,255,255,.3);}
 .traintypes .toggle input:checked + .track {border-color:rgba(0,0,0,.03);background:rgba(0,0,0,.3);}
@@ -360,7 +360,7 @@ background-color:transparent;
 
 .train-text-wrap {background: transparent;border:0;border-radius:0;}
 .list.train-text-wrap{border-bottom:1px solid rgba(0,0,0,.1) ;margin:0;}
-.placeholder-icon{color:rgba(255,255,255,.7);font-size: 30px;padding-right: 12px; padding-left:0;}
+.placeholder-icon{font-size:30px;padding-right: 15px; color:rgba(255,255,255,0.7);}
 .placeholder-icon:hover, .placeholder-icon:active, .placeholder-icon.activated{color:#FFF;}
 .train-text{color:#FFF;border-color:rgba(255,255,255,.3);margin:10px 6px;white-space: pre-wrap; }
 .train-text-edit {color:#FFF;border-color:rgba(255,255,255,.3);border-width: 0 0 1px;border-top:solid;margin:10px 6px; line-height: 20px}
