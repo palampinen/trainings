@@ -469,8 +469,11 @@ angular.module('treenit.controllers', [])
   }
 
   if($stateParams.edit){
+    // delay to wait transition
+    $timeout(function() {
       $scope.focusTextarea(0)
-      $scope.updateEditorDelayed(0);
+      $scope.updateEditor(0)
+    },500)
   }  
 
 })
