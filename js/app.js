@@ -181,6 +181,17 @@ angular.module('treenit', ['ionic', 'treenit.controllers', 'treenit.services'])
         }
       }
     })
+
+  .state('app.timer', {
+      url: '/timer',
+      views: {
+        'menuContent': {
+          templateUrl: 'templates/app-timer.html',
+          controller: 'TimerCtrl'
+        }
+      }
+    })
+
   /*
     .state('app.friend-detail', {
       url: '/friend/:friendId',

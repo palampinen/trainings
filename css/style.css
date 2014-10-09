@@ -7,7 +7,10 @@ Lazy Electric Blue: #5E8CD6
 
 
 html, body, h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6, button, input,select,option,textarea  {font-family:'Lato','Montserrat',Roboto,Helvetica Neue, Helvetica, Arial;}
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {color:#FFF;}
 
+
+h1 {font-weight: 100; font-size: 50px;line-height: 60px;}
 
 /* Sidenav */
 /*.item-complex .item-content, .item-radio .item-content {background-color:#000;color:#bbb;}
@@ -363,7 +366,7 @@ background-color:transparent;
 .placeholder-icon{font-size:30px;padding-right: 15px; color:rgba(255,255,255,0.7);}
 .placeholder-icon:hover, .placeholder-icon:active, .placeholder-icon.activated{color:#FFF;}
 .train-text{color:#FFF;border-color:rgba(255,255,255,.3);margin:10px 6px;white-space: pre-wrap; }
-.train-text-edit {color:#FFF;border-color:rgba(255,255,255,.3);border-width: 0 0 1px;border-top:solid;margin:10px 6px; line-height: 20px}
+.train-text-edit {color:#FFF;border-color:rgba(255,255,255,.3);border-width: 0 0 1px;border-top:solid;margin:10px 6px; line-height: 20px; min-height: 200px;}
 .train-text-edit::-webkit-input-placeholder, .train-tex-editt[placeholder] { color:rgba(255,255,255,.1) }
 .train-text:active, .train-text:focus {}
 
@@ -381,3 +384,11 @@ background-color:transparent;
     .bg-black .bg-run, .bg-run { background-size: 140% auto;}
 }
 
+/* Timer */
+h1.max-size {font-size: 13vmax; line-height:1;}
+h1.middle {margin-top: 10vh}
+
+.timerbtn {text-transform: uppercase;font-weight: 300;}
+.timerbtn.going, .button.button-light.button-outline.going {background-color:rgba(0,0,0,.1) }
+.fullheightpage .scroll {min-height:100%;}
+.bottom-set {position:absolute; bottom:0;width: 100%; left:0; padding:0 10px;}

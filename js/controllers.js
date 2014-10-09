@@ -629,11 +629,71 @@ angular.module('treenit.controllers', [])
   
 })
 
-/*
-.controller('FriendDetailCtrl', function($scope, $stateParams, Friends) {
-  $scope.friend = Friends.get($stateParams.friendId);
+.controller('TimerCtrl', function($scope, $interval) {
+  $scope.start = false;
+  $scope.seconds = "00";
+  $scope.tens    = "00";
+  $scope.mins   = "00";
+  var tens    = 0,
+      seconds = 0,
+      mins    = 0;
+
+  var Interval;
+  $scope.timer = {
+    start:function(){
+      $interval.cancel(Interval);
+      Interval = $interval(startTimer, 10);
+    },
+    stop: function() {
+      $interval.cancel(Interval);
+    },
+    startstop:function(x){
+      return x ? this.start() : this.stop();
+    },
+    reset: function(){
+      $interval.cancel(Interval);
+      tens = 0;
+      seconds = 0;
+      mins = 0;
+      $scope.tens = "00";
+      $scope.seconds = "00";
+      $scope.mins = "00";
+      appendSeconds.innerHTML = seconds;
+    }
+  }
+
+  var startTimer = function() {
+
+    tens++;
+    
+    if(tens < 9){
+      $scope.tens = "0" + tens;
+    }else if(tens > 9){
+      $scope.tens  = tens;
+    } 
+    
+
+    if (tens > 99) {
+      seconds++;
+      $scope.seconds = seconds > 9 ? seconds : "0" + seconds;
+      tens = 0;
+      $scope.tens = "00";
+    }
+
+    if (seconds >= 60) {
+      mins++;
+      $scope.mins = mins > 9 ? mins : "0"+mins;
+      $scope.seconds = "00";
+      $scope.tens = "00";
+      seconds = 0;
+      tens = 0
+    }
+    
+  }
+
 })
-*/
+
+
 
 .controller('AccountCtrl', function($scope, User) {
 

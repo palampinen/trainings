@@ -1,0 +1,19 @@
+<ion-view title="Sekuntikello" >
+
+<ion-nav-buttons side="right">
+	<button ng-click=" timer.reset(); start=!start;" class="button button-icon icon ion-ios7-reload"></button>
+</ion-nav-buttons>
+
+<ion-content class="has-header fullheightpage" padding="true">
+
+	<h1 class="center max-size middle" ng-click="start=!start; timer.startstop(start)" >{{mins}}:{{seconds}}:{{tens}}</h1>
+
+	<div class="bottom-set">
+		<button ng-click="start=!start; timer.startstop(start)" class="button button-block button-light button-large button-outline timerbtn icon" ng-class="{'ion-ios7-play-outline':!start,'ion-ios7-pause-outline going':start}">	
+			<span ng-show="!start">Aloita</span>
+			<span ng-show="start">Pysäytä</span>
+		</button>
+	</div>
+
+</ion-content>
+</ion-view>
